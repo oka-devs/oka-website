@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OKA — Casa das Soluções Inteligentes. Automação de processos, Agentes de IA e Análise de Dados para transformar suas ideias em resultados." />
+  <title>OKA — Casa das Soluções Inteligentes</title>
+
+  <!-- Fonts: Inter (hero), Plus Jakarta Sans (eyebrow), Instrument Serif italic (accent), Space Grotesk (section headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <!-- hls.js (background video) -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ocean:'#010D20','blue-oka':'#0077E6','blue-glacial':'#00B2CF',
+            emerald:'#00D4A3', polar:'#F8F8FF','oka-red':'#C23432',
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"','sans-serif'],
+            body:    ['Inter','sans-serif'],
+            jakarta: ['"Plus Jakarta Sans"','sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:auto; }
+    body { background:#010D20; color:#F8F8FF; font-family:'Inter',sans-serif; overflow-x:hidden; }
+    h1,h2,h3,h4,h5 { font-family:'Space Grotesk',sans-serif; }
+
+    .font-inter   { font-family:'Inter',sans-serif; }
+    .font-jakarta { font-family:'Plus Jakarta Sans',sans-serif; }
+    .font-serif-it{ font-family:'Instrument Serif',serif; font-style:italic; }
+
+    .text-gradient {
+      background:linear-gradient(135deg,#0077E6 0%,#00B2CF 55%,#00D4A3 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+
+    /* ── Background video ── */
+    #bg-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.6; z-index:0; pointer-events:none; }
+
+    /* ── Liquid glass card ── */
+    .liquid-card {
+      position:relative; width:200px; height:200px; border-radius:22px;
+      background:rgba(255,255,255,0.01); background-blend-mode:luminosity;
+      backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+      box-shadow:inset 0 1px 1px rgba(255,255,255,0.1);
+    }
+    .liquid-card::before {
+      content:""; position:absolute; inset:0; padding:1.4px; border-radius:inherit; pointer-events:none;
+      background:linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.04) 100%);
+      -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude;
+    }
+
+    /* ── Liquid glass (Aura-style, used in Por que OKA) ── */
+    .liquid-glass {
+      background:rgba(255,255,255,0.01); background-blend-mode:luminosity;
+      backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+      border:none; box-shadow:inset 0 1px 1px rgba(255,255,255,0.1);
+      position:relative; overflow:hidden;
+    }
+    .liquid-glass::before {
+      content:''; position:absolute; inset:0; border-radius:inherit; padding:1.4px; pointer-events:none;
+      background:linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+      -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude;
+    }
+
+    /* ── Glass / nav / buttons ── */
+    .glass { background:rgba(255,255,255,0.04); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,0.07); transition:background .28s,border-color .28s,transform .28s,box-shadow .28s; }
+    .glass:hover { background:rgba(255,255,255,0.07); border-color:rgba(0,119,230,0.28); transform:translateY(-5px); box-shadow:0 20px 60px rgba(0,119,230,0.08); }
+    .nav-glass { background:rgba(1,13,32,0.55); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border-bottom:1px solid rgba(255,255,255,0.05); transition:box-shadow .3s,background .3s; }
+
+    .btn-cta { background:linear-gradient(135deg,#0077E6 0%,#00B2CF 55%,#00D4A3 100%); color:#010D20; transition:transform .22s,box-shadow .22s,filter .22s; }
+    .btn-cta:hover { filter:brightness(1.06); box-shadow:0 14px 36px rgba(0,178,207,0.3); }
+    .btn-outline { border:1.5px solid rgba(255,255,255,0.18); transition:border-color .22s,background .22s,transform .22s; }
+    .btn-outline:hover { border-color:rgba(0,212,163,0.55); background:rgba(0,212,163,0.08); }
+    .btn-whatsapp { background:#25D366; transition:background .22s,transform .22s,box-shadow .22s; }
+    .btn-whatsapp:hover { background:#1fbc59; box-shadow:0 10px 28px rgba(37,211,102,0.3); }
+    .btn-instagram { background:linear-gradient(45deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888); transition:opacity .22s,transform .22s,box-shadow .22s; }
+    .btn-instagram:hover { opacity:.9; box-shadow:0 10px 28px rgba(220,39,67,0.3); }
+
+    .step-badge { width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,rgba(0,119,230,0.18),rgba(0,178,207,0.18));border:1px solid rgba(0,119,230,0.38);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#00B2CF;margin:0 auto 1.5rem;flex-shrink:0; }
+    .icon-box { width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+
+    .reveal { opacity:0; transform:translateY(28px); }
+    .reveal-head { clip-path:inset(0 0 100% 0); }
+
+    /* ── Preloader ── */
+    #preloader { position:fixed; inset:0; z-index:10000; background:#010D20; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1.25rem; }
+    #preloader .draw { stroke-dasharray:1; stroke-dashoffset:1; }
+    #preloader .door { opacity:0; }
+    #preloader .pl-word { opacity:0; letter-spacing:.6em; }
+
+    /* ── Mobile menu (full-screen overlay) ── */
+    #mobile-menu { position:fixed; inset:0; z-index:80; background:rgba(1,13,32,0.97); backdrop-filter:blur(12px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem; opacity:0; pointer-events:none; transition:opacity .32s ease; }
+    #mobile-menu.open { opacity:1; pointer-events:auto; }
+
+    @media (prefers-reduced-motion:reduce) {
+      .reveal { opacity:1; transform:none; }
+      .reveal-head { clip-path:none; }
+      .glass,.btn-cta,.btn-outline,.btn-whatsapp,.btn-instagram { transition:none; }
+      #bg-video,.bg-video-section { display:none; }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+<!-- Shared logo gradient -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+  <linearGradient id="okaRing" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#0077E6"/><stop offset="55%" stop-color="#00B2CF"/><stop offset="100%" stop-color="#00D4A3"/>
+  </linearGradient>
+</defs></svg>
+
+
+<!-- ════════ PRELOADER ════════ -->
+<div id="preloader">
+  <svg width="90" height="90" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <circle class="draw" cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="2.5"/>
+    <path class="draw" d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
+    <path class="draw" d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
+    <path class="draw" d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
+    <path class="door" d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
+  </svg>
+  <span class="pl-word font-heading font-bold text-lg text-polar/80">OKA</span>
+</div>
+
+
+<!-- ════════ NAVBAR (Aura-style) ════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300">
+  <div class="max-w-6xl mx-auto flex items-center justify-between relative">
+    <!-- Left: logo -->
+    <a href="#" class="flex items-center gap-2.5 cursor-pointer" aria-label="OKA — início">
+      <svg width="36" height="36" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="3"/>
+        <path d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
+      </svg>
+      <span class="font-heading font-bold text-lg text-polar tracking-widest">OKA</span>
+    </a>
+
+    <!-- Center: links -->
+    <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 font-inter">
+      <a href="#servicos"   class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Serviços</a>
+      <a href="#porque-oka" class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Por que OKA</a>
+      <a href="#processo"   class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Processo</a>
+    </div>
+
+    <!-- Right: pill CTA (desktop) -->
+    <a href="#contato" class="hidden md:inline-flex group items-center justify-center gap-2 rounded-full bg-white text-black font-medium text-sm px-5 py-3 transition-all hover:bg-white/90 active:scale-[0.98]">
+      Fale conosco
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-[1px]" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+
+    <!-- Mobile: circular menu button -->
+    <button id="hamburger" class="md:hidden w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-polar/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer" aria-label="Abrir menu" aria-expanded="false">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile full-screen overlay -->
+<div id="mobile-menu">
+  <button id="menu-close" class="absolute top-6 right-6 text-polar/70 hover:text-polar cursor-pointer" aria-label="Fechar menu">
+    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#servicos"   class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>SERVIÇOS</a>
+  <a href="#porque-oka" class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>POR QUE OKA</a>
+  <a href="#processo"   class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>PROCESSO</a>
+  <a href="#contato" class="btn-cta px-7 py-3.5 rounded-full font-jakarta font-bold uppercase text-base mt-4" data-close-menu>Fale conosco</a>
+</div>
+
+
+<!-- ════════ HERO ════════ -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background video -->
+  <video id="bg-video" autoplay muted loop playsinline aria-hidden="true"></video>
+
+  <!-- Overlays -->
+  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(90deg,#010D20 0%,rgba(1,13,32,0.55) 42%,transparent 100%);"></div>
+  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(0deg,#010D20 0%,rgba(1,13,32,0.2) 38%,transparent 70%);"></div>
+
+  <!-- Central glow -->
+  <div class="absolute left-1/2 top-[12%] -translate-x-1/2 z-[2] pointer-events-none" data-parallax="0.2" aria-hidden="true">
+    <svg width="900" height="420" viewBox="0 0 900 420" fill="none">
+      <defs><filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="25"/></filter></defs>
+      <ellipse cx="450" cy="210" rx="380" ry="95" fill="#00B2CF" opacity="0.22" filter="url(#glowBlur)"/>
+      <ellipse cx="450" cy="210" rx="260" ry="60" fill="#00D4A3" opacity="0.16" filter="url(#glowBlur)"/>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-6xl mx-auto px-6 w-full pt-28 pb-20">
+    <div class="max-w-2xl">
+
+      <!-- Liquid glass card -->
+      <div id="h-card" class="liquid-card -translate-y-[50px] p-5 flex flex-col justify-between" style="opacity:0">
+        <span class="text-[14px] text-white/70 font-inter tracking-[0.2em]">[ 2025 ]</span>
+        <div>
+          <h3 class="text-[18px] leading-snug text-white font-inter font-medium">Construído por <span class="font-serif-it text-[20px]">especialistas</span> em IA</h3>
+          <p class="text-[11px] text-white/50 mt-2 font-inter leading-relaxed">Automação e dados sob medida para o seu negócio.</p>
+        </div>
+      </div>
+
+      <!-- Eyebrow -->
+      <p id="h-eyebrow" class="font-jakarta font-bold text-[11px] tracking-[0.25em] uppercase mb-5 text-gradient" style="opacity:0">Automação com propósito</p>
+
+      <!-- Headline -->
+      <h1 id="h-title" class="font-inter font-extrabold uppercase tracking-tight text-polar leading-[1.02] mb-6" style="font-size:clamp(40px,7vw,72px);opacity:0">
+        <span class="block text-polar/40" style="font-size:clamp(14px,2vw,22px);letter-spacing:0.18em;margin-bottom:0.35em;">Conheça a Oka</span>
+        A casa das soluções inteligentes<span class="text-gradient">.</span>
+      </h1>
+
+      <!-- Description -->
+      <p id="h-sub" class="font-inter text-[14px] leading-relaxed text-white/70 mb-9" style="max-width:512px;opacity:0">
+        Automatize processos, implemente agentes de IA e tome decisões guiadas por dados. Tecnologia com propósito para empresas que querem crescer com leveza.
+      </p>
+
+      <!-- CTAs -->
+      <div id="h-cta" class="flex flex-col sm:flex-row items-start sm:items-center gap-4" style="opacity:0">
+        <a href="#contato" class="btn-cta magnetic inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 font-jakarta font-bold uppercase text-sm tracking-wide cursor-pointer">
+          Começar agora
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10 4 15 9 10 14"/></svg>
+        </a>
+        <a href="#servicos" class="btn-outline inline-flex items-center rounded-full px-7 py-3.5 text-polar font-inter font-semibold text-sm cursor-pointer">Ver soluções</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ SERVIÇOS ════════ -->
+<section id="servicos" class="py-28 px-6 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">O que fazemos</p>
+      <h2 class="reveal-head font-heading font-bold text-polar mb-4" style="font-size:clamp(2rem,5vw,3.25rem);">Soluções que <span class="text-gradient">transformam</span></h2>
+      <p class="reveal font-body text-polar/50 text-lg max-w-md mx-auto leading-relaxed">Combinamos IA, automação e desenvolvimento de aplicativos para resolver os desafios reais do seu negócio.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal glass rounded-2xl p-8">
+        <div class="icon-box mb-6" style="background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-xl text-polar mb-3">Automação de Processos</h3>
+        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Eliminamos tarefas repetitivas com RPA e integrações inteligentes. Seus sistemas conversam entre si — sem intervenção manual.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">RPA</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">Integrações</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">Workflows</span>
+        </div>
+      </div>
+
+      <div class="reveal glass rounded-2xl p-8 relative overflow-hidden" style="border-color:rgba(0,212,163,0.18);">
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,212,163,0.12),transparent 70%);"></div>
+        <div class="icon-box mb-6 relative" style="background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-xl text-polar mb-3">Agentes de IA</h3>
+        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Assistentes virtuais com inteligência real. Atendimento, triagem, qualificação de leads e suporte — disponíveis 24/7, sem custo fixo de equipe.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">LLMs</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">Chatbots</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">Agentes</span>
+        </div>
+      </div>
+
+      <div class="reveal glass rounded-2xl p-8">
+        <div class="icon-box mb-6" style="background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-xl text-polar mb-3">Análise de Dados &amp; BI</h3>
+        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Dashboards e relatórios que transformam dados brutos em decisões claras. Visibilidade total do seu negócio em tempo real.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">Dashboards</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">BI</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">Analytics</span>
+        </div>
+      </div>
+
+      <div class="reveal glass rounded-2xl p-8" style="border-color:rgba(194,52,50,0.18);">
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(194,52,50,0.08),transparent 70%);"></div>
+        <div class="icon-box mb-6" style="background:rgba(194,52,50,0.12);border:1px solid rgba(194,52,50,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C23432" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-xl text-polar mb-3">Aplicativos</h3>
+        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Desenvolvemos aplicativos mobile e web com design moderno e experiência de usuário cuidadosa — do conceito à loja.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(194,52,50,0.3);color:#C23432;">iOS</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(194,52,50,0.3);color:#C23432;">Android</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(194,52,50,0.3);color:#C23432;">Web App</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- App showcase: LocaFácil -->
+    <div class="reveal mt-12 glass rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6" style="border-color:rgba(194,52,50,0.18);">
+      <a href="https://apps.apple.com/br/app/locaf%C3%A1cil-alugue-tudo/id6776306781" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 group">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/43/49/cc434925-3bcd-bcb8-2002-5e4f7101bea2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="LocaFácil - Alugue Tudo" class="w-20 h-20 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-200" />
+      </a>
+      <div class="flex-1 text-center sm:text-left">
+        <p class="font-inter text-xs text-white/40 tracking-[0.18em] uppercase mb-1">Desenvolvido pela OKA</p>
+        <h3 class="font-heading font-semibold text-lg text-polar mb-1">LocaFácil – Alugue Tudo</h3>
+        <p class="font-body text-polar/50 text-sm leading-relaxed">Gerencie imóveis, veículos e equipamentos alugados em um só app — contratos, cobranças e comprovantes sem papel.</p>
+      </div>
+      <a href="https://apps.apple.com/br/app/locaf%C3%A1cil-alugue-tudo/id6776306781" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 text-polar/70 hover:text-polar hover:border-white/30 transition-all text-sm font-inter">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Ver na App Store
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ════════ POR QUE OKA (FeatureTriage-style) ════════ -->
+<section id="porque-oka" class="relative py-28 px-6 overflow-hidden">
+  <!-- Cinematic background video -->
+  <video class="bg-video-section absolute inset-0 w-full h-full object-cover pointer-events-none" autoplay loop muted playsinline aria-hidden="true" style="opacity:0.35" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4"></video>
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,#010D20 0%,rgba(1,13,32,0.5) 45%,rgba(1,13,32,0.7) 70%,#010D20 100%);"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+
+    <!-- Left column -->
+    <div>
+      <div class="reveal flex items-center gap-2.5 mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+        <span class="font-inter text-sm text-white/70">Por que OKA</span>
+        <span class="font-inter text-xs text-white/50 px-2 py-0.5 rounded-full border border-white/10">IA-native</span>
+      </div>
+      <h2 class="reveal-head font-heading font-bold text-polar leading-[1.02] mb-6" style="font-size:clamp(1.9rem,4.5vw,3rem);">Tradição e inovação<br />no mesmo espaço</h2>
+      <p class="reveal font-body text-polar/60 text-base leading-relaxed mb-10" style="max-width:28rem;">OKA é a nossa "oca" — a casa onde problemas encontram soluções tecnológicas, com a leveza de quem entende o seu negócio.</p>
+      <div class="reveal flex items-center gap-5">
+        <svg id="big-logo" width="92" height="92" viewBox="0 0 100 100" fill="none" aria-label="Logo OKA">
+          <circle class="bl-draw" cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="2.5"/>
+          <path class="bl-draw" d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
+          <path class="bl-draw" d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
+          <path class="bl-draw" d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
+          <path class="bl-door" d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
+        </svg>
+        <div>
+          <p class="font-heading font-bold text-3xl text-polar tracking-[0.22em]">OKA</p>
+          <p class="font-body text-xs text-polar/35 tracking-[0.12em] uppercase mt-1.5">Casa das Soluções Inteligentes</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column: liquid-glass card -->
+    <div class="reveal liquid-glass rounded-2xl p-5">
+      <div class="flex items-center gap-2 mb-4 px-1">
+        <span class="w-1.5 h-1.5 rounded-full" style="background:#00D4A3;"></span>
+        <span class="font-inter text-sm text-white/70">Por que escolher a OKA</span>
+        <span class="ml-auto font-inter text-xs text-white/40">4 motivos</span>
+      </div>
+
+      <div class="space-y-3">
+        <!-- 1 -->
+        <div class="liquid-glass rounded-lg p-3.5">
+          <div class="flex items-center gap-2.5 mb-1.5">
+            <span class="w-2 h-2 rounded-full" style="background:#00D4A3;"></span>
+            <span class="font-inter text-sm text-white font-medium">Soluções sob medida</span>
+            <span class="ml-auto font-inter text-xs text-white/40">100%</span>
+          </div>
+          <p class="font-inter text-xs text-white/55 leading-relaxed pl-[18px]">Cada automação é desenhada para o seu processo — nunca um template genérico.</p>
+        </div>
+        <!-- 2 -->
+        <div class="liquid-glass rounded-lg p-3.5">
+          <div class="flex items-center gap-2.5 mb-1.5">
+            <span class="w-2 h-2 rounded-full" style="background:#00B2CF;"></span>
+            <span class="font-inter text-sm text-white font-medium">Entrega ágil</span>
+            <span class="ml-auto font-inter text-xs text-white/40">semanas</span>
+          </div>
+          <p class="font-inter text-xs text-white/55 leading-relaxed pl-[18px]">Metodologia ágil: você vê valor antes mesmo do projeto terminar.</p>
+        </div>
+        <!-- 3 -->
+        <div class="liquid-glass rounded-lg p-3.5">
+          <div class="flex items-center gap-2.5 mb-1.5">
+            <span class="w-2 h-2 rounded-full" style="background:#0077E6;"></span>
+            <span class="font-inter text-sm text-white font-medium">Parceria de longo prazo</span>
+            <span class="ml-auto font-inter text-xs text-white/40">sempre</span>
+          </div>
+          <p class="font-inter text-xs text-white/55 leading-relaxed pl-[18px]">Não entregamos e sumimos. Acompanhamos, otimizamos e evoluímos com você.</p>
+        </div>
+        <!-- 4 -->
+        <div class="liquid-glass rounded-lg p-3.5">
+          <div class="flex items-center gap-2.5 mb-1.5">
+            <span class="w-2 h-2 rounded-full" style="background:#5ED29C;"></span>
+            <span class="font-inter text-sm text-white font-medium">Agentes sempre ativos</span>
+            <span class="ml-auto font-inter text-xs text-white/40">24/7</span>
+          </div>
+          <p class="font-inter text-xs text-white/55 leading-relaxed pl-[18px]">Atendimento e automações operando sem pausa, todos os dias.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════ COMO FUNCIONA ════════ -->
+<section id="processo" class="py-28 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">Como funciona</p>
+      <h2 class="reveal-head font-heading font-bold text-polar" style="font-size:clamp(1.9rem,4.5vw,3rem);">Simples. Direto. <span class="text-gradient">Eficaz.</span></h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 relative">
+      <div class="hidden md:block absolute" style="top:26px;left:calc(16.666% + 20px);right:calc(16.666% + 20px);height:1px;background:linear-gradient(90deg,rgba(0,119,230,0.3),rgba(0,178,207,0.3));" aria-hidden="true"></div>
+      <div class="reveal text-center"><div class="step-badge">01</div><h3 class="font-heading font-semibold text-xl text-polar mb-3">Diagnóstico</h3><p class="font-body text-polar/42 text-sm leading-relaxed">Entendemos profundamente seus processos, gargalos e oportunidades. Sem jargão — conversa direta e honesta.</p></div>
+      <div class="reveal text-center"><div class="step-badge">02</div><h3 class="font-heading font-semibold text-xl text-polar mb-3">Solução sob medida</h3><p class="font-body text-polar/42 text-sm leading-relaxed">Desenhamos e desenvolvemos a automação ideal para o seu contexto, com foco em impacto real e mensurável.</p></div>
+      <div class="reveal text-center"><div class="step-badge">03</div><h3 class="font-heading font-semibold text-xl text-polar mb-3">Entrega e evolução</h3><p class="font-body text-polar/42 text-sm leading-relaxed">Implantamos, treinamos seu time e acompanhamos de perto. A OKA cresce junto com o seu negócio.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ CONTATO ════════ -->
+<section id="contato" class="py-28 px-6">
+  <div class="max-w-2xl mx-auto text-center">
+    <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">Vamos conversar</p>
+    <h2 class="reveal-head font-heading font-bold text-polar mb-5" style="font-size:clamp(2rem,5vw,3.25rem);">Pronto para <span class="text-gradient">automatizar</span>?</h2>
+    <p class="reveal font-body text-polar/50 text-lg leading-relaxed mb-12">Escolha o canal que preferir. Nossa equipe responde com agilidade e sem enrolação.</p>
+
+    <div class="reveal flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://instagram.com/Oka.projects" target="_blank" rel="noopener noreferrer" class="btn-instagram magnetic px-8 py-4 rounded-xl text-white font-semibold cursor-pointer inline-flex items-center justify-center gap-3 text-base" aria-label="Perfil no Instagram @Oka.projects">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        @Oka.projects
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="border-t py-10 px-6" style="border-color:rgba(255,255,255,0.06);">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-2.5 cursor-pointer" aria-label="OKA — topo">
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="3"/>
+        <path d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
+      </svg>
+      <span class="font-heading font-bold text-polar tracking-widest">OKA</span>
+    </a>
+    <p class="font-body text-xs text-polar/22 text-center">© 2025 OKA — Casa das Soluções Inteligentes. Todos os direitos reservados.</p>
+    <div class="flex items-center gap-5">
+      <a href="https://instagram.com/Oka.projects" target="_blank" rel="noopener noreferrer" class="text-polar/28 hover:text-polar/70 transition-colors duration-200 cursor-pointer" aria-label="Instagram @Oka.projects">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════ SCRIPTS ════════ -->
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine   = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ── HLS background video ── */
+  (function () {
+    const video = document.getElementById('bg-video');
+    if (!video || reduce) return;
+    const src = 'https://stream.mux.com/tLkHO1qZoaaQOUeVWo8hEBeGQfySP02EPS02BmnNFyXys.m3u8';
+    if (window.Hls && Hls.isSupported()) {
+      const hls = new Hls({ enableWorker: false });
+      hls.loadSource(src); hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => video.play().catch(() => {}));
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = src; video.addEventListener('loadedmetadata', () => video.play().catch(() => {}));
+    }
+  })();
+
+  /* ── Lenis smooth scroll ── */
+  let lenis = null;
+  if (!reduce && window.Lenis) {
+    lenis = new Lenis({ lerp: 0.09 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((t) => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  function scrollToEl(target) {
+    if (lenis) lenis.scrollTo(target, { offset: -10 });
+    else target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ── Mobile menu overlay ── */
+  const hamburger = document.getElementById('hamburger');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const openMenu = () => { mobileMenu.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); };
+  const closeMenu = () => { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); };
+  hamburger.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  document.querySelectorAll('[data-close-menu]').forEach(el => el.addEventListener('click', closeMenu));
+
+  /* ── Anchor scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') { e.preventDefault(); scrollToEl(document.body); return; }
+    const t = document.querySelector(id);
+    if (t) { e.preventDefault(); scrollToEl(t); }
+  }));
+
+  /* ── Preloader + hero entrance ── */
+  function playHero() {
+    gsap.timeline({ defaults: { ease: 'power3.out' } })
+      .fromTo('#h-card',    { opacity: 0, y: -20, scale: 0.96 }, { opacity: 1, y: -50, scale: 1, duration: 0.7 })
+      .fromTo('#h-eyebrow', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.35')
+      .fromTo('#h-title',   { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.8 }, '-=0.3')
+      .fromTo('#h-sub',     { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.65 }, '-=0.45')
+      .fromTo('#h-cta',     { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.4');
+  }
+  const preloader = document.getElementById('preloader');
+  if (reduce) {
+    preloader.style.display = 'none';
+    gsap.set('#h-card', { opacity: 1, y: -50 });
+    gsap.set(['#h-eyebrow', '#h-title', '#h-sub', '#h-cta'], { opacity: 1 });
+  } else {
+    const strokes = preloader.querySelectorAll('.draw');
+    strokes.forEach(p => { const len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = len; });
+    gsap.timeline()
+      .to(strokes, { strokeDashoffset: 0, duration: 0.9, stagger: 0.1, ease: 'power2.inOut' })
+      .to(preloader.querySelector('.door'), { opacity: 1, duration: 0.3 }, '-=0.2')
+      .to(preloader.querySelector('.pl-word'), { opacity: 1, letterSpacing: '0.25em', duration: 0.5 }, '-=0.1')
+      .to(preloader, { opacity: 0, duration: 0.5, delay: 0.15, onComplete: () => { preloader.style.display = 'none'; ScrollTrigger.refresh(); } })
+      .add(playHero, '-=0.3');
+  }
+
+  /* ── Scroll reveals ── */
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    gsap.to(el, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: (i % 3) * 0.06, scrollTrigger: { trigger: el, start: 'top 88%' } });
+  });
+  document.querySelectorAll('.reveal-head').forEach(el => {
+    gsap.to(el, { clipPath: 'inset(0 0 0% 0)', duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+  });
+
+  /* ── Count-up ── */
+  document.querySelectorAll('.counter').forEach(el => {
+    const to = +el.dataset.to, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    const obj = { v: 0 };
+    gsap.to(obj, { v: to, duration: 1.6, ease: 'power2.out', onUpdate: () => { el.textContent = pre + Math.round(obj.v) + suf; }, scrollTrigger: { trigger: el, start: 'top 90%' } });
+  });
+
+  /* ── Navbar entrance (Aura-style fade/slide down) ── */
+  if (!reduce) {
+    gsap.from('nav', { y: -10, opacity: 0, duration: 0.6, ease: 'power2.out' });
+    gsap.from('.nav-link', { y: -8, opacity: 0, duration: 0.5, stagger: 0.06, delay: 0.1, ease: 'power2.out' });
+  }
+
+  /* ── OKA emblem draw on scroll (Por que OKA) ── */
+  (function () {
+    const strokes = document.querySelectorAll('#big-logo .bl-draw');
+    if (!strokes.length) return;
+    strokes.forEach(p => { const len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = reduce ? 0 : len; });
+    const door = document.querySelector('#big-logo .bl-door');
+    if (reduce) return;
+    if (door) door.style.opacity = 0;
+    ScrollTrigger.create({ trigger: '#big-logo', start: 'top 85%', once: true, onEnter: () => {
+      gsap.timeline().to(strokes, { strokeDashoffset: 0, duration: 1, stagger: 0.12, ease: 'power2.inOut' }).to(door, { opacity: 1, duration: 0.4 }, '-=0.3');
+    } });
+  })();
+
+  /* ── Parallax glow ── */
+  if (!reduce) document.querySelectorAll('[data-parallax]').forEach(el => {
+    gsap.to(el, { yPercent: 40 * parseFloat(el.dataset.parallax), ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
+  });
+
+  /* ── Navbar: transparent at top, glass on scroll ── */
+  const nav = document.getElementById('navbar');
+  function setNav() {
+    const on = (window.scrollY || document.documentElement.scrollTop) > 60;
+    nav.classList.toggle('nav-glass', on);
+    nav.style.boxShadow = on ? '0 4px 30px rgba(0,0,0,0.4)' : 'none';
+  }
+  window.addEventListener('scroll', setNav, { passive: true });
+  setNav();
+
+  /* ── Magnetic buttons ── */
+  if (fine && !reduce) document.querySelectorAll('.magnetic').forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      gsap.to(el, { x: (e.clientX - r.left - r.width / 2) * 0.3, y: (e.clientY - r.top - r.height / 2) * 0.4, duration: 0.4, ease: 'power3.out' });
+    });
+    el.addEventListener('mouseleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1,0.4)' }));
+  });
+</script>
+
+</body>
+</html>

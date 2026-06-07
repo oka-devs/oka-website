@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512" fill="none">
+  <defs>
+    <linearGradient id="okaRing" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0077E6"/>
+      <stop offset="0.55" stop-color="#00B2CF"/>
+      <stop offset="1" stop-color="#00D4A3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="45" stroke="url(#okaRing)" stroke-width="3"/>
+  <path d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
+</svg>

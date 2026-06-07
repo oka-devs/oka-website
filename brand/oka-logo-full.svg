@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 130" width="470" height="130" fill="none">
+  <defs>
+    <linearGradient id="okaRing" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0077E6"/>
+      <stop offset="0.55" stop-color="#00B2CF"/>
+      <stop offset="1" stop-color="#00D4A3"/>
+    </linearGradient>
+  </defs>
+  <!-- Mark -->
+  <g transform="translate(15,17) scale(0.96)">
+    <circle cx="50" cy="50" r="45" stroke="url(#okaRing)" stroke-width="3"/>
+    <path d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="132" y="62" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif" font-size="52" font-weight="700" letter-spacing="9" fill="#F8F8FF">OKA</text>
+  <text x="134" y="90" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="400" letter-spacing="2.2" fill="#F8F8FF" fill-opacity="0.5">CASA DAS SOLUÇÕES INTELIGENTES</text>
+</svg>
