@@ -3,12 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="OKA — Casa das Soluções Inteligentes. Automação de processos, Agentes de IA e Análise de Dados para transformar suas ideias em resultados." />
-  <title>OKA — Casa das Soluções Inteligentes</title>
+
+  <!-- ════════ SEO: Primary meta ════════ -->
+  <title>OKA — Automação, Agentes de IA e Análise de Dados</title>
+  <meta name="description" content="A OKA é a casa das soluções inteligentes: automação de processos, agentes de IA e análise de dados sob medida. Transformamos ideias em resultados para empresas que querem crescer." />
+  <meta name="keywords" content="automação de processos, agentes de IA, inteligência artificial, análise de dados, business intelligence, RPA, chatbots, desenvolvimento de aplicativos, OKA" />
+  <meta name="author" content="OKA" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#010D20" />
+  <link rel="canonical" href="https://oka.dev.br/" />
+
+  <!-- ════════ Favicons / app icons ════════ -->
+  <link rel="icon" type="image/svg+xml" href="/brand/oka-mark.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- ════════ Open Graph (Facebook, WhatsApp, LinkedIn) ════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="OKA" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://oka.dev.br/" />
+  <meta property="og:title" content="OKA — Automação, Agentes de IA e Análise de Dados" />
+  <meta property="og:description" content="A casa das soluções inteligentes: automação de processos, agentes de IA e análise de dados sob medida para o seu negócio." />
+  <meta property="og:image" content="https://oka.dev.br/brand/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="OKA — Casa das Soluções Inteligentes" />
+
+  <!-- ════════ Twitter / X Card ════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OKA — Automação, Agentes de IA e Análise de Dados" />
+  <meta name="twitter:description" content="A casa das soluções inteligentes: automação de processos, agentes de IA e análise de dados sob medida para o seu negócio." />
+  <meta name="twitter:image" content="https://oka.dev.br/brand/og-image.png" />
+  <meta name="twitter:image:alt" content="OKA — Casa das Soluções Inteligentes" />
 
   <!-- Fonts: Inter (hero), Plus Jakarta Sans (eyebrow), Instrument Serif italic (accent), Space Grotesk (section headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind -->
@@ -123,6 +158,63 @@
       #bg-video,.bg-video-section { display:none; }
     }
   </style>
+
+  <!-- ════════ Structured data (JSON-LD) ════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://oka.dev.br/#organization",
+        "name": "OKA",
+        "alternateName": "OKA — Casa das Soluções Inteligentes",
+        "url": "https://oka.dev.br/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://oka.dev.br/brand/oka-logo-full-light.png",
+          "width": 1410,
+          "height": 390
+        },
+        "image": "https://oka.dev.br/brand/og-image.png",
+        "description": "Automação de processos, agentes de IA e análise de dados sob medida para empresas que querem crescer.",
+        "slogan": "A casa das soluções inteligentes",
+        "sameAs": [
+          "https://instagram.com/Oka.projects"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://oka.dev.br/#website",
+        "url": "https://oka.dev.br/",
+        "name": "OKA",
+        "description": "Automação, Agentes de IA e Análise de Dados",
+        "publisher": { "@id": "https://oka.dev.br/#organization" },
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://oka.dev.br/#service",
+        "name": "OKA",
+        "url": "https://oka.dev.br/",
+        "image": "https://oka.dev.br/brand/og-image.png",
+        "parentOrganization": { "@id": "https://oka.dev.br/#organization" },
+        "areaServed": "BR",
+        "availableLanguage": "pt-BR",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Soluções OKA",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automação de Processos", "description": "Eliminamos tarefas repetitivas com RPA e integrações inteligentes." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agentes de IA", "description": "Assistentes virtuais com inteligência real para atendimento, triagem e suporte 24/7." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Análise de Dados & BI", "description": "Dashboards e relatórios que transformam dados brutos em decisões claras." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desenvolvimento de Aplicativos", "description": "Aplicativos mobile e web com design moderno e experiência de usuário cuidadosa." } }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="antialiased">
@@ -322,7 +414,7 @@
     <!-- App showcase: LocaFácil -->
     <div class="reveal mt-12 glass rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6" style="border-color:rgba(194,52,50,0.18);">
       <a href="https://apps.apple.com/br/app/locaf%C3%A1cil-alugue-tudo/id6776306781" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 group">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/43/49/cc434925-3bcd-bcb8-2002-5e4f7101bea2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="LocaFácil - Alugue Tudo" class="w-20 h-20 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-200" />
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/43/49/cc434925-3bcd-bcb8-2002-5e4f7101bea2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="Ícone do app LocaFácil – Alugue Tudo, desenvolvido pela OKA" width="80" height="80" loading="lazy" decoding="async" class="w-20 h-20 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-200" />
       </a>
       <div class="flex-1 text-center sm:text-left">
         <p class="font-inter text-xs text-white/40 tracking-[0.18em] uppercase mb-1">Desenvolvido pela OKA</p>
