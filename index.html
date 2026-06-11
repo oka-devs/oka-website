@@ -138,6 +138,44 @@
     .step-badge { width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,rgba(0,119,230,0.18),rgba(0,178,207,0.18));border:1px solid rgba(0,119,230,0.38);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#00B2CF;margin:0 auto 1.5rem;flex-shrink:0; }
     .icon-box { width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
 
+    /* ── Chat demo (agente de IA) ── */
+    .chat-window { display:flex; flex-direction:column; height:480px; }
+    .chat-stream { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:10px; padding:4px 2px; scrollbar-width:none; }
+    .chat-stream::-webkit-scrollbar { display:none; }
+    .bubble { max-width:84%; padding:10px 14px; border-radius:16px; font-size:13.5px; line-height:1.5; font-family:'Inter',sans-serif; }
+    .bubble b { font-weight:600; }
+    .bubble-user { align-self:flex-end; background:linear-gradient(135deg,#0077E6,#00B2CF); color:#04121f; border-bottom-right-radius:5px; }
+    .bubble-user b { color:#04121f; }
+    .bubble-agent { align-self:flex-start; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); color:#E8F0F5; border-bottom-left-radius:5px; }
+    .bubble-agent b { color:#fff; }
+    .chat-status { align-self:center; display:inline-flex; align-items:center; gap:6px; font-size:11.5px; color:rgba(255,255,255,0.6); background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:5px 12px; border-radius:999px; text-align:center; }
+    .chat-status.done { color:#00D4A3; border-color:rgba(0,212,163,0.3); background:rgba(0,212,163,0.06); }
+    .typing-dots { align-self:flex-start; display:inline-flex; gap:4px; align-items:center; width:fit-content; padding:13px 16px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; border-bottom-left-radius:5px; }
+    .typing-dots span { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.55); animation:tdot 1.2s infinite ease-in-out; }
+    .typing-dots span:nth-child(2) { animation-delay:.18s; }
+    .typing-dots span:nth-child(3) { animation-delay:.36s; }
+    @keyframes tdot { 0%,60%,100%{ transform:translateY(0); opacity:.4; } 30%{ transform:translateY(-5px); opacity:1; } }
+
+    /* ── Automação: fluxo animado ── */
+    .flow-list { position:relative; }
+    .flow-list::before { content:''; position:absolute; left:21px; top:30px; bottom:30px; width:2px; background:rgba(255,255,255,0.08); }
+    .flow-progress { position:absolute; left:21px; top:30px; width:2px; height:0; z-index:0; background:linear-gradient(180deg,#0077E6,#00D4A3); box-shadow:0 0 9px rgba(0,178,207,0.55); transition:height .55s ease; }
+    .flow-node { position:relative; z-index:1; display:flex; align-items:center; gap:14px; padding:12px 0; }
+    .flow-icon { width:44px; height:44px; border-radius:12px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); transition:background .4s ease,border-color .4s ease,box-shadow .4s ease; }
+    .flow-node.active .flow-icon { background:rgba(0,178,207,0.16); border-color:rgba(0,178,207,0.6); box-shadow:0 0 0 4px rgba(0,178,207,0.08); }
+    .flow-title { font-family:'Inter',sans-serif; font-size:14px; font-weight:600; color:#aebcc6; transition:color .4s ease; }
+    .flow-node.active .flow-title { color:#fff; }
+    .flow-sub { font-family:'Inter',sans-serif; font-size:11.5px; color:rgba(255,255,255,0.4); line-height:1.4; }
+    .flow-check { margin-left:auto; flex-shrink:0; color:#00D4A3; opacity:0; transform:scale(0.5); transition:opacity .4s ease,transform .4s ease; }
+    .flow-node.active .flow-check { opacity:1; transform:scale(1); }
+
+    /* ── BI: dashboard animado ── */
+    .bi-bars { display:flex; align-items:flex-end; gap:10px; height:128px; }
+    .bi-bar-wrap { flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end; }
+    .bi-bar { width:100%; border-radius:6px 6px 0 0; height:0; background:linear-gradient(180deg,#00D4A3,#0077E6); transition:height 1s cubic-bezier(.2,.8,.2,1); }
+    .bi-bar.peak { background:linear-gradient(180deg,#00E6B0,#00B2CF); }
+    .bi-bar-label { font-family:'Inter',sans-serif; font-size:10px; color:rgba(255,255,255,0.35); }
+
     .reveal { opacity:0; transform:translateY(28px); }
     .reveal-head { clip-path:inset(0 0 100% 0); }
 
@@ -258,6 +296,7 @@
     <!-- Center: links -->
     <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 font-inter">
       <a href="#servicos"   class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Serviços</a>
+      <a href="#agente-ia"  class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">O que é IA</a>
       <a href="#porque-oka" class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Por que OKA</a>
       <a href="#processo"   class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Processo</a>
     </div>
@@ -281,6 +320,7 @@
     <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
   <a href="#servicos"   class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>SERVIÇOS</a>
+  <a href="#agente-ia"  class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>O QUE É IA</a>
   <a href="#porque-oka" class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>POR QUE OKA</a>
   <a href="#processo"   class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>PROCESSO</a>
   <a href="#contato" class="btn-cta px-7 py-3.5 rounded-full font-jakarta font-bold uppercase text-base mt-4" data-close-menu>Fale conosco</a>
@@ -361,7 +401,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Automação de Processos</h3>
-        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Eliminamos tarefas repetitivas com RPA e integrações inteligentes. Seus sistemas conversam entre si — sem intervenção manual.</p>
+        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Tarefas repetitivas viram processos automáticos. Seus sistemas conversam entre si — sem ninguém digitando nada.</p>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">RPA</span>
           <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">Integrações</span>
@@ -375,7 +415,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Agentes de IA</h3>
-        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Assistentes virtuais com inteligência real. Atendimento, triagem, qualificação de leads e suporte — disponíveis 24/7, sem custo fixo de equipe.</p>
+        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Um atendente digital que entende e resolve sozinho: tira dúvidas, agenda e organiza clientes — 24 horas por dia.</p>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">LLMs</span>
           <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">Chatbots</span>
@@ -388,7 +428,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Análise de Dados &amp; BI</h3>
-        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Dashboards e relatórios que transformam dados brutos em decisões claras. Visibilidade total do seu negócio em tempo real.</p>
+        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Seus números em painéis simples e visuais — pra você decidir com clareza, em tempo real.</p>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">Dashboards</span>
           <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">BI</span>
@@ -402,7 +442,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C23432" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Aplicativos</h3>
-        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Desenvolvemos aplicativos mobile e web com design moderno e experiência de usuário cuidadosa — do conceito à loja.</p>
+        <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Apps mobile e web bonitos e fáceis de usar — do conceito à publicação na loja.</p>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(194,52,50,0.3);color:#C23432;">iOS</span>
           <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(194,52,50,0.3);color:#C23432;">Android</span>
@@ -430,6 +470,205 @@
 </section>
 
 
+<!-- ════════ O QUE É UM AGENTE DE IA ════════ -->
+<section id="agente-ia" class="py-28 px-6 relative overflow-hidden">
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,212,163,0.08),transparent 70%);" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">Sem jargão</p>
+      <h2 class="reveal-head font-heading font-bold text-polar mb-4" style="font-size:clamp(2rem,5vw,3.25rem);">Afinal, o que é um <span class="text-gradient">agente de IA</span>?</h2>
+      <p class="reveal font-body text-polar/55 text-lg max-w-xl mx-auto leading-relaxed">É como um funcionário digital: ele entende o que a pessoa quer, consulta os seus sistemas e resolve sozinho — por mensagem, a qualquer hora do dia. Veja na prática 👇</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+
+      <!-- Left: how it works in 3 steps -->
+      <div class="space-y-7 order-2 md:order-1">
+        <div class="reveal flex gap-4">
+          <div class="icon-box" style="background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-lg text-polar mb-1">1. Entende</h3>
+            <p class="font-body text-polar/50 text-sm leading-relaxed">Lê a mensagem em linguagem natural e capta a real intenção — mesmo escrita do jeito do cliente, com gírias ou erros.</p>
+          </div>
+        </div>
+
+        <div class="reveal flex gap-4">
+          <div class="icon-box" style="background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-lg text-polar mb-1">2. Decide e consulta</h3>
+            <p class="font-body text-polar/50 text-sm leading-relaxed">Acessa a sua agenda, sistemas, CRM ou planilhas para descobrir a melhor resposta — exatamente como uma pessoa faria.</p>
+          </div>
+        </div>
+
+        <div class="reveal flex gap-4">
+          <div class="icon-box" style="background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-lg text-polar mb-1">3. Age</h3>
+            <p class="font-body text-polar/50 text-sm leading-relaxed">Responde, agenda, registra ou encaminha sozinho — e só chama uma pessoa do time quando realmente é preciso.</p>
+          </div>
+        </div>
+
+        <p class="reveal font-body text-polar/40 text-sm leading-relaxed pt-1">Resultado: ninguém fica esperando resposta, sua equipe foca no que importa e o atendimento nunca dorme.</p>
+      </div>
+
+      <!-- Right: animated chat demo -->
+      <div class="reveal liquid-glass rounded-3xl p-5 chat-window order-1 md:order-2">
+        <div class="flex items-center gap-3 pb-4 mb-1" style="border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div class="relative">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#0077E6,#00D4A3);">
+              <svg width="22" height="22" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                <path d="M30 72 L54 20" stroke="#04121f" stroke-width="6" stroke-linecap="round"/>
+                <path d="M70 72 L46 20" stroke="#04121f" stroke-width="6" stroke-linecap="round"/>
+                <path d="M27 72 L73 72" stroke="#04121f" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2" style="background:#00D4A3;border-color:#0a1626;" aria-hidden="true"></span>
+          </div>
+          <div>
+            <p class="font-heading font-semibold text-sm text-polar leading-tight">Agente OKA</p>
+            <p id="chat-presence" class="font-inter text-xs text-emerald">online agora</p>
+          </div>
+          <span class="ml-auto font-inter text-[10px] text-white/40 tracking-[0.2em] uppercase">demo</span>
+        </div>
+
+        <div id="chat-stream" class="chat-stream" aria-live="polite"></div>
+
+        <div class="pt-3 mt-1 flex items-center justify-center gap-2" style="border-top:1px solid rgba(255,255,255,0.06);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span class="font-inter text-[11px] text-white/40">Atendimento automático, 24 horas por dia</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal text-center mt-14">
+      <a href="#contato" class="btn-outline inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-polar font-inter font-semibold text-sm cursor-pointer">
+        Quero um agente assim no meu negócio
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ NA PRÁTICA (automação + BI) ════════ -->
+<section id="na-pratica" class="py-28 px-6 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">Na prática</p>
+      <h2 class="reveal-head font-heading font-bold text-polar mb-4" style="font-size:clamp(2rem,5vw,3.25rem);">Não é mágica. É <span class="text-gradient">trabalho feito</span> pra você.</h2>
+      <p class="reveal font-body text-polar/55 text-lg max-w-xl mx-auto leading-relaxed">Veja dois exemplos do que roda nos bastidores — sem você precisar mexer em nada.</p>
+    </div>
+
+    <!-- Row 1: Automação -->
+    <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center mb-20">
+      <div class="reveal glass rounded-3xl p-6 order-1">
+        <div class="flex items-center gap-2 mb-5 px-1">
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#00B2CF;"></span>
+          <span class="font-inter text-sm text-white/70">Automação rodando</span>
+          <span class="ml-auto font-inter text-[10px] text-white/40 tracking-[0.2em] uppercase">ao vivo</span>
+        </div>
+        <div id="flow-list" class="flow-list">
+          <span class="flow-progress"></span>
+          <div class="flow-node">
+            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+            <div class="flow-body"><p class="flow-title">Nova intimação publicada</p><p class="flow-sub">tribunal, diário ou portal</p></div>
+            <span class="flow-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </div>
+          <div class="flow-node">
+            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+            <div class="flow-body"><p class="flow-title">Lê e classifica o andamento</p><p class="flow-sub">identifica tipo e urgência</p></div>
+            <span class="flow-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </div>
+          <div class="flow-node">
+            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M12 14v3l2 1"/></svg></div>
+            <div class="flow-body"><p class="flow-title">Calcula o prazo e agenda</p><p class="flow-sub">lança na agenda do time</p></div>
+            <span class="flow-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </div>
+          <div class="flow-node">
+            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+            <div class="flow-body"><p class="flow-title">Avisa o advogado responsável</p><p class="flow-sub">alerta enviado automático</p></div>
+            <span class="flow-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-2">
+        <div class="reveal flex items-center gap-2.5 mb-4">
+          <span class="icon-box" style="width:38px;height:38px;background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+          </span>
+          <span class="font-inter text-sm text-white/70">Automação de processos</span>
+        </div>
+        <h3 class="reveal font-heading font-bold text-polar mb-4" style="font-size:clamp(1.5rem,3.5vw,2rem);">Uma intimação é publicada. O prazo já entra na agenda.</h3>
+        <p class="reveal font-body text-polar/55 text-base leading-relaxed mb-5">Aquela rotina de acompanhar publicações, ler o andamento, calcular prazo e avisar o responsável vira um fluxo automático. Os sistemas conversam entre si, sem ninguém copiando e colando de uma tela pra outra.</p>
+        <p class="reveal font-body text-polar/40 text-sm leading-relaxed">Menos risco de perder prazo, menos retrabalho, e horas da equipe de volta todo mês.</p>
+      </div>
+    </div>
+
+    <!-- Row 2: BI -->
+    <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <div class="order-2 md:order-1">
+        <div class="reveal flex items-center gap-2.5 mb-4">
+          <span class="icon-box" style="width:38px;height:38px;background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          </span>
+          <span class="font-inter text-sm text-white/70">Análise de dados &amp; BI</span>
+        </div>
+        <h3 class="reveal font-heading font-bold text-polar mb-4" style="font-size:clamp(1.5rem,3.5vw,2rem);">Seus números, claros num só lugar.</h3>
+        <p class="reveal font-body text-polar/55 text-base leading-relaxed mb-5">Aqueles dados espalhados em várias planilhas viram um painel simples e visual. Você abre e entende na hora como o negócio está indo — sem precisar montar relatório nenhum.</p>
+        <p class="reveal font-body text-polar/40 text-sm leading-relaxed">Decisões mais rápidas, baseadas no que está acontecendo agora — não no que aconteceu mês passado.</p>
+      </div>
+
+      <div class="reveal glass rounded-3xl p-6 order-1 md:order-2" id="bi-demo">
+        <div class="flex items-center gap-2 mb-5 px-1">
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#00D4A3;"></span>
+          <span class="font-inter text-sm text-white/70">Painel do escritório</span>
+          <span class="ml-auto font-inter text-[10px] text-emerald tracking-[0.2em] uppercase">tempo real</span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 mb-6">
+          <div class="rounded-xl p-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+            <p class="font-inter text-[10px] text-white/40 uppercase tracking-wider mb-1">Processos ativos</p>
+            <p class="font-heading font-bold text-polar text-lg leading-none"><span class="counter" data-to="342">0</span></p>
+          </div>
+          <div class="rounded-xl p-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+            <p class="font-inter text-[10px] text-white/40 uppercase tracking-wider mb-1">Prazos na semana</p>
+            <p class="font-heading font-bold text-polar text-lg leading-none"><span class="counter" data-to="87">0</span></p>
+          </div>
+          <div class="rounded-xl p-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+            <p class="font-inter text-[10px] text-white/40 uppercase tracking-wider mb-1">No prazo</p>
+            <p class="font-heading font-bold text-lg leading-none" style="color:#00D4A3;"><span class="counter" data-to="98" data-suffix="%">0%</span></p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between mb-3 px-1">
+          <span class="font-inter text-xs text-white/50">Movimentações por dia</span>
+          <span class="font-inter text-xs text-emerald inline-flex items-center gap-1">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            +23%
+          </span>
+        </div>
+        <div class="bi-bars">
+          <div class="bi-bar-wrap"><div class="bi-bar" data-h="42"></div><span class="bi-bar-label">Seg</span></div>
+          <div class="bi-bar-wrap"><div class="bi-bar" data-h="58"></div><span class="bi-bar-label">Ter</span></div>
+          <div class="bi-bar-wrap"><div class="bi-bar" data-h="50"></div><span class="bi-bar-label">Qua</span></div>
+          <div class="bi-bar-wrap"><div class="bi-bar" data-h="74"></div><span class="bi-bar-label">Qui</span></div>
+          <div class="bi-bar-wrap"><div class="bi-bar peak" data-h="100"></div><span class="bi-bar-label">Sex</span></div>
+          <div class="bi-bar-wrap"><div class="bi-bar" data-h="88"></div><span class="bi-bar-label">Sáb</span></div>
+          <div class="bi-bar-wrap"><div class="bi-bar" data-h="46"></div><span class="bi-bar-label">Dom</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- ════════ POR QUE OKA (FeatureTriage-style) ════════ -->
@@ -706,6 +945,113 @@
     });
     el.addEventListener('mouseleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1,0.4)' }));
   });
+
+  /* ── Agente de IA: demo de chat animada ── */
+  (function () {
+    const stream = document.getElementById('chat-stream');
+    if (!stream) return;
+    const presence = document.getElementById('chat-presence');
+
+    const steps = [
+      { t: 'user',   html: 'Oi! Vocês têm horário pra amanhã de manhã?' },
+      { t: 'status', html: 'Entendendo o pedido' },
+      { t: 'typing' },
+      { t: 'agent',  html: 'Oi, Marina! 👋 Amanhã tenho <b>9h</b> ou <b>10h30</b> com a Dra. Helena. Qual fica melhor?' },
+      { t: 'user',   html: '9h tá ótimo 🙌' },
+      { t: 'status', html: 'Consultando a agenda e reservando' },
+      { t: 'typing' },
+      { t: 'agent',  html: 'Prontinho! Agendei pra <b>amanhã às 9h</b> ✅ Já te enviei a confirmação por aqui. Posso ajudar em mais alguma coisa?' },
+      { t: 'status', html: 'Agendamento criado no sistema', done: true },
+    ];
+
+    const reduceM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    const setPresence = txt => { if (presence) presence.textContent = txt; };
+
+    function add(cls, html) {
+      const el = document.createElement('div');
+      el.className = cls;
+      el.innerHTML = html;
+      if (!reduceM) { el.style.opacity = '0'; el.style.transform = 'translateY(8px)'; }
+      stream.appendChild(el);
+      if (!reduceM) requestAnimationFrame(() => {
+        el.style.transition = 'opacity .35s ease, transform .35s ease';
+        el.style.opacity = '1'; el.style.transform = 'none';
+      });
+      stream.scrollTop = stream.scrollHeight;
+      return el;
+    }
+
+    async function play() {
+      stream.innerHTML = '';
+      for (const s of steps) {
+        if (s.t === 'user') { add('bubble bubble-user', s.html); await sleep(reduceM ? 0 : 950); }
+        else if (s.t === 'agent') { setPresence('online agora'); add('bubble bubble-agent', s.html); await sleep(reduceM ? 0 : 1500); }
+        else if (s.t === 'status') { add('chat-status' + (s.done ? ' done' : ''), (s.done ? '✓ ' : '⚙️ ') + s.html); await sleep(reduceM ? 0 : 1150); }
+        else if (s.t === 'typing') { if (reduceM) continue; setPresence('digitando…'); const el = add('typing-dots', '<span></span><span></span><span></span>'); await sleep(1300); el.remove(); }
+      }
+      if (reduceM) return;
+      await sleep(4000);
+      play();
+    }
+
+    let started = false;
+    const start = () => { if (started) return; started = true; play(); };
+    if (reduceM) { start(); return; }
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { start(); io.disconnect(); } });
+      }, { threshold: 0.3 });
+      io.observe(stream);
+    } else start();
+  })();
+
+  /* ── Automação: fluxo animado ── */
+  (function () {
+    const list = document.getElementById('flow-list');
+    if (!list) return;
+    const nodes = [...list.querySelectorAll('.flow-node')];
+    const prog = list.querySelector('.flow-progress');
+    const reduceM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+    async function run() {
+      for (let i = 0; i < nodes.length; i++) {
+        nodes[i].classList.add('active');
+        if (prog) prog.style.height = Math.max(0, nodes[i].offsetTop + nodes[i].offsetHeight / 2 - 30) + 'px';
+        await sleep(900);
+      }
+      await sleep(2600);
+      nodes.forEach(n => n.classList.remove('active'));
+      if (prog) prog.style.height = '0px';
+      await sleep(700);
+      run();
+    }
+
+    if (reduceM) { nodes.forEach(n => n.classList.add('active')); if (prog) prog.style.height = '100%'; return; }
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { run(); io.disconnect(); } });
+    }, { threshold: 0.3 });
+    io.observe(list);
+  })();
+
+  /* ── BI: barras crescendo ── */
+  (function () {
+    const demo = document.getElementById('bi-demo');
+    if (!demo) return;
+    const bars = [...demo.querySelectorAll('.bi-bar')];
+    const reduceM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const grow = () => bars.forEach((b, i) => {
+      const h = (b.dataset.h || 0) + '%';
+      if (reduceM) { b.style.height = h; return; }
+      setTimeout(() => { b.style.height = h; }, i * 90);
+    });
+    if (reduceM) { grow(); return; }
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { grow(); io.disconnect(); } });
+    }, { threshold: 0.35 });
+    io.observe(demo);
+  })();
 </script>
 
 </body>
