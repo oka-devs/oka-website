@@ -135,6 +135,15 @@
     .btn-instagram { background:linear-gradient(45deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888); transition:opacity .22s,transform .22s,box-shadow .22s; }
     .btn-instagram:hover { opacity:.9; box-shadow:0 10px 28px rgba(220,39,67,0.3); }
 
+    /* ── Form fields (contato) ── */
+    .form-label { display:block; font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:rgba(255,255,255,0.6); margin-bottom:7px; letter-spacing:0.02em; }
+    .form-input { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:13px 16px; color:#F8F8FF; font-family:'Inter',sans-serif; font-size:14px; transition:border-color .2s,background .2s,box-shadow .2s; }
+    .form-input::placeholder { color:rgba(255,255,255,0.32); }
+    .form-input:focus { outline:none; border-color:rgba(0,178,207,0.55); background:rgba(255,255,255,0.06); box-shadow:0 0 0 3px rgba(0,178,207,0.1); }
+    textarea.form-input { resize:vertical; min-height:104px; }
+    select.form-input { appearance:none; -webkit-appearance:none; cursor:pointer; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff80' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:42px; }
+    select.form-input option { background:#0a1626; color:#F8F8FF; }
+
     .step-badge { width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,rgba(0,119,230,0.18),rgba(0,178,207,0.18));border:1px solid rgba(0,119,230,0.38);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#00B2CF;margin:0 auto 1.5rem;flex-shrink:0; }
     .icon-box { width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
 
@@ -246,7 +255,8 @@
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automação de Processos", "description": "Eliminamos tarefas repetitivas com RPA e integrações inteligentes." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agentes de IA", "description": "Assistentes virtuais com inteligência real para atendimento, triagem e suporte 24/7." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Análise de Dados & BI", "description": "Dashboards e relatórios que transformam dados brutos em decisões claras." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desenvolvimento de Aplicativos", "description": "Aplicativos mobile e web com design moderno e experiência de usuário cuidadosa." } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desenvolvimento de Aplicativos", "description": "Aplicativos mobile e web com design moderno e experiência de usuário cuidadosa." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Treinamentos de IA sob medida", "description": "Capacitação em IA, Claude e Claude Code para escritórios e empresas — do iniciante ao avançado, incluindo criação de projetos. Ementa e exemplos montados sob medida para cada equipe." } }
           ]
         }
       }
@@ -297,6 +307,7 @@
     <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 font-inter">
       <a href="#servicos"   class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Serviços</a>
       <a href="#agente-ia"  class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">O que é IA</a>
+      <a href="#treinamentos" class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Treinamentos</a>
       <a href="#porque-oka" class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Por que OKA</a>
       <a href="#processo"   class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Processo</a>
     </div>
@@ -321,6 +332,7 @@
   </button>
   <a href="#servicos"   class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>SERVIÇOS</a>
   <a href="#agente-ia"  class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>O QUE É IA</a>
+  <a href="#treinamentos" class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>TREINAMENTOS</a>
   <a href="#porque-oka" class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>POR QUE OKA</a>
   <a href="#processo"   class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>PROCESSO</a>
   <a href="#contato" class="btn-cta px-7 py-3.5 rounded-full font-jakarta font-bold uppercase text-base mt-4" data-close-menu>Fale conosco</a>
@@ -671,6 +683,140 @@
 </section>
 
 
+<!-- ════════ TREINAMENTOS ════════ -->
+<section id="treinamentos" class="py-28 px-6 relative overflow-hidden">
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[640px] h-[320px] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,119,230,0.08),transparent 70%);" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">Capacitação</p>
+      <h2 class="reveal-head font-heading font-bold text-polar mb-4" style="font-size:clamp(2rem,5vw,3.25rem);">Treinamentos de IA <span class="text-gradient">sob medida</span></h2>
+      <p class="reveal font-body text-polar/55 text-lg max-w-2xl mx-auto leading-relaxed">Levamos o Claude e o Claude Code para o seu time — do primeiro prompt à criação de projetos completos. Conteúdo desenhado para a realidade do seu escritório ou empresa, do iniciante ao avançado.</p>
+    </div>
+
+    <!-- Para quem -->
+    <div class="grid md:grid-cols-3 gap-6 mb-20">
+      <div class="reveal glass rounded-2xl p-8">
+        <div class="icon-box mb-6" style="background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M19 21V11a2 2 0 0 0-2-2h-2"/><line x1="9" y1="7" x2="9" y2="7.01"/><line x1="9" y1="11" x2="9" y2="11.01"/><line x1="9" y1="15" x2="9" y2="15.01"/></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-xl text-polar mb-3">Escritórios</h3>
+        <p class="font-body text-polar/48 text-sm leading-relaxed">Times jurídicos, contábeis e profissionais liberais que querem ganhar tempo nas rotinas — peças, pesquisas, revisões e organização do dia a dia.</p>
+      </div>
+
+      <div class="reveal glass rounded-2xl p-8">
+        <div class="icon-box mb-6" style="background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-xl text-polar mb-3">Empresas</h3>
+        <p class="font-body text-polar/48 text-sm leading-relaxed">Equipes de qualquer porte que querem adotar IA com método, segurança e resultado real — capacitando o time inteiro, não só uma pessoa.</p>
+      </div>
+
+      <div class="reveal glass rounded-2xl p-8" style="border-color:rgba(0,212,163,0.18);">
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,212,163,0.12),transparent 70%);"></div>
+        <div class="icon-box mb-6 relative" style="background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+        </div>
+        <h3 class="font-heading font-semibold text-xl text-polar mb-3">Sob medida</h3>
+        <p class="font-body text-polar/48 text-sm leading-relaxed">Você pede, a gente monta. Definimos a ementa, os exemplos e o ritmo a partir do que a sua equipe realmente precisa aprender.</p>
+      </div>
+    </div>
+
+    <!-- Da base ao avançado -->
+    <div class="text-center mb-12">
+      <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-3">Da base ao avançado</p>
+      <h3 class="reveal-head font-heading font-bold text-polar" style="font-size:clamp(1.5rem,3.5vw,2.25rem);">Uma trilha para cada <span class="text-gradient">nível</span></h3>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <!-- Nível 01 -->
+      <div class="reveal glass rounded-2xl p-7">
+        <div class="flex items-center gap-2.5 mb-5">
+          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">Nível 01</span>
+          <span class="font-inter text-sm text-white/70">Iniciante</span>
+        </div>
+        <ul class="space-y-3.5">
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>O que é IA e como ela ajuda no dia a dia</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Primeiros passos com o Claude</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Escrever bons pedidos (prompts) do zero</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Resumir, revisar e redigir com apoio da IA</li>
+        </ul>
+      </div>
+
+      <!-- Nível 02 -->
+      <div class="reveal glass rounded-2xl p-7" style="border-color:rgba(0,178,207,0.18);">
+        <div class="flex items-center gap-2.5 mb-5">
+          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">Nível 02</span>
+          <span class="font-inter text-sm text-white/70">Intermediário</span>
+        </div>
+        <ul class="space-y-3.5">
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Prompts avançados e organização de conhecimento</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Modelos e fluxos para tarefas recorrentes</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Análise de documentos e dados com IA</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Boas práticas, limites e segurança</li>
+        </ul>
+      </div>
+
+      <!-- Nível 03 -->
+      <div class="reveal glass rounded-2xl p-7 relative overflow-hidden" style="border-color:rgba(0,212,163,0.2);">
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,212,163,0.1),transparent 70%);"></div>
+        <div class="flex items-center gap-2.5 mb-5 relative">
+          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">Nível 03</span>
+          <span class="font-inter text-sm text-white/70">Avançado</span>
+        </div>
+        <ul class="space-y-3.5 relative">
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Claude Code na prática</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Criação de projetos do zero</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Automações e integrações com seus sistemas</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Construir agentes e ferramentas sob medida</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Formato / o que está incluído -->
+    <div class="reveal glass rounded-3xl p-8 md:p-10 mb-14">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <h4 class="font-heading font-semibold text-base text-polar mb-1.5">Ao vivo ou gravado</h4>
+          <p class="font-body text-polar/45 text-sm leading-relaxed">Online ou presencial, no formato que encaixa na agenda do time.</p>
+        </div>
+        <div>
+          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h4 class="font-heading font-semibold text-base text-polar mb-1.5">Material sob medida</h4>
+          <p class="font-body text-polar/45 text-sm leading-relaxed">Apostila e exemplos montados com casos do seu contexto.</p>
+        </div>
+        <div>
+          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h4 class="font-heading font-semibold text-base text-polar mb-1.5">Prática desde o início</h4>
+          <p class="font-body text-polar/45 text-sm leading-relaxed">Mão na massa com exercícios reais, não só teoria.</p>
+        </div>
+        <div>
+          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4 class="font-heading font-semibold text-base text-polar mb-1.5">Acompanhamento</h4>
+          <p class="font-body text-polar/45 text-sm leading-relaxed">Suporte depois do treinamento para fixar de verdade.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal text-center">
+      <a href="#contato" class="btn-cta magnetic inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 font-jakarta font-bold uppercase text-sm tracking-wide cursor-pointer">
+        Montar um treinamento para meu time
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="9" x2="15" y2="9"/><polyline points="10 4 15 9 10 14"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <!-- ════════ POR QUE OKA (FeatureTriage-style) ════════ -->
 <section id="porque-oka" class="relative py-28 px-6 overflow-hidden">
   <!-- Cinematic background video -->
@@ -774,14 +920,49 @@
 
 <!-- ════════ CONTATO ════════ -->
 <section id="contato" class="py-28 px-6">
-  <div class="max-w-2xl mx-auto text-center">
-    <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">Vamos conversar</p>
-    <h2 class="reveal-head font-heading font-bold text-polar mb-5" style="font-size:clamp(2rem,5vw,3.25rem);">Pronto para <span class="text-gradient">automatizar</span>?</h2>
-    <p class="reveal font-body text-polar/50 text-lg leading-relaxed mb-12">Escolha o canal que preferir. Nossa equipe responde com agilidade e sem enrolação.</p>
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center">
+      <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">Vamos conversar</p>
+      <h2 class="reveal-head font-heading font-bold text-polar mb-5" style="font-size:clamp(2rem,5vw,3.25rem);">Pronto para <span class="text-gradient">automatizar</span>?</h2>
+      <p class="reveal font-body text-polar/50 text-lg leading-relaxed mb-12">Preencha e continue a conversa no WhatsApp — a mensagem já vai pronta. Respondemos com agilidade e sem enrolação.</p>
+    </div>
 
-    <div class="reveal flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://instagram.com/Oka.projects" target="_blank" rel="noopener noreferrer" class="btn-instagram magnetic px-8 py-4 rounded-xl text-white font-semibold cursor-pointer inline-flex items-center justify-center gap-3 text-base" aria-label="Perfil no Instagram @Oka.projects">
-        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    <!-- Formulário → WhatsApp -->
+    <form id="wa-form" class="reveal glass rounded-3xl p-7 md:p-9 text-left" novalidate>
+      <div class="grid sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="form-label" for="wa-nome">Nome</label>
+          <input class="form-input" id="wa-nome" name="nome" type="text" placeholder="Como podemos te chamar?" autocomplete="name" required />
+        </div>
+        <div>
+          <label class="form-label" for="wa-interesse">Interesse</label>
+          <select class="form-input" id="wa-interesse" name="interesse">
+            <option value="" selected>Selecione um assunto</option>
+            <option value="Treinamentos de IA">Treinamentos de IA</option>
+            <option value="Automação de processos">Automação de processos</option>
+            <option value="Agentes de IA">Agentes de IA</option>
+            <option value="Análise de dados &amp; BI">Análise de dados &amp; BI</option>
+            <option value="Desenvolvimento de aplicativos">Desenvolvimento de aplicativos</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label class="form-label" for="wa-mensagem">Mensagem <span class="text-white/30">(opcional)</span></label>
+        <textarea class="form-input" id="wa-mensagem" name="mensagem" placeholder="Conte rapidamente o que você precisa…"></textarea>
+      </div>
+      <button type="submit" class="btn-whatsapp magnetic w-full px-8 py-4 rounded-xl text-white font-semibold cursor-pointer inline-flex items-center justify-center gap-3 text-base">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+        Enviar pelo WhatsApp
+      </button>
+      <p class="font-body text-polar/35 text-xs text-center mt-4">Abre o WhatsApp com sua mensagem pronta — é só apertar enviar.</p>
+    </form>
+
+    <!-- Canal alternativo -->
+    <div class="reveal text-center mt-8">
+      <p class="font-body text-polar/40 text-sm mb-3">Prefere outro canal?</p>
+      <a href="https://instagram.com/Oka.projects" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full border border-white/15 text-polar/70 hover:text-polar hover:border-white/30 transition-all text-sm font-inter" aria-label="Perfil no Instagram @Oka.projects">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         @Oka.projects
       </a>
     </div>
@@ -1051,6 +1232,26 @@
       es.forEach(e => { if (e.isIntersecting) { grow(); io.disconnect(); } });
     }, { threshold: 0.35 });
     io.observe(demo);
+  })();
+
+  /* ── Formulário → WhatsApp ── */
+  (function () {
+    const form = document.getElementById('wa-form');
+    if (!form) return;
+    const phone = '559284648668'; // +55 92 8464-8668
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nome = (form.nome.value || '').trim();
+      const interesse = form.interesse.value || '';
+      const mensagem = (form.mensagem.value || '').trim();
+      if (!nome) { form.nome.focus(); return; }
+      let txt = 'Olá, OKA! Vim pelo site de vocês.';
+      txt += '\n\nMeu nome é ' + nome + '.';
+      if (interesse) txt += '\nTenho interesse em: ' + interesse + '.';
+      if (mensagem) txt += '\n\n' + mensagem;
+      const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(txt);
+      window.open(url, '_blank', 'noopener');
+    });
   })();
 </script>
 
