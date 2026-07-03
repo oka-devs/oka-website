@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ════════ SEO: Primary meta ════════ -->
+  <title>Zapier, Make ou automação sob medida: qual usar? | OKA</title>
+  <meta name="description" content="Comparativo honesto entre ferramentas de automação prontas (Zapier, Make, n8n) e automação sob medida: quando cada uma basta, quanto custam e quando migrar." />
+  <meta name="author" content="OKA" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#010D20" />
+  <link rel="canonical" href="https://oka.dev.br/blog/zapier-make-ou-automacao-sob-medida/" />
+
+  <!-- ════════ Favicons ════════ -->
+  <link rel="icon" type="image/svg+xml" href="/brand/oka-mark.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- ════════ Open Graph ════════ -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="OKA" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://oka.dev.br/blog/zapier-make-ou-automacao-sob-medida/" />
+  <meta property="og:title" content="Zapier, Make ou automação sob medida: qual faz sentido?" />
+  <meta property="og:description" content="Ferramentas prontas resolvem muita coisa. Quando elas bastam, quando travam e quando o sob medida compensa." />
+  <meta property="og:image" content="https://oka.dev.br/brand/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-07-03" />
+  <meta property="article:author" content="OKA" />
+  <meta property="article:section" content="Automação" />
+
+  <!-- ════════ Twitter / X Card ════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zapier, Make ou automação sob medida: qual faz sentido?" />
+  <meta name="twitter:description" content="Ferramentas prontas resolvem muita coisa. Quando elas bastam, quando travam e quando o sob medida compensa." />
+  <meta name="twitter:image" content="https://oka.dev.br/brand/og-image.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind + typography -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ocean:'#010D20','blue-oka':'#0077E6','blue-glacial':'#00B2CF',
+            emerald:'#00D4A3', polar:'#F8F8FF','oka-red':'#C23432',
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"','sans-serif'],
+            body:    ['Inter','sans-serif'],
+            jakarta: ['"Plus Jakarta Sans"','sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    body { background:#010D20; color:#F8F8FF; font-family:'Inter',sans-serif; overflow-x:hidden; }
+    h1,h2,h3,h4 { font-family:'Space Grotesk',sans-serif; }
+    .font-serif-it { font-family:'Instrument Serif',serif; font-style:italic; }
+    .text-gradient {
+      background:linear-gradient(135deg,#0077E6 0%,#00B2CF 55%,#00D4A3 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .glass { background:rgba(255,255,255,0.04); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,0.07); transition:background .28s,border-color .28s,transform .28s,box-shadow .28s; }
+    a.glass:hover { background:rgba(255,255,255,0.07); border-color:rgba(0,119,230,0.28); transform:translateY(-5px); box-shadow:0 20px 60px rgba(0,119,230,0.08); }
+    .btn-cta { background:linear-gradient(135deg,#0077E6 0%,#00B2CF 55%,#00D4A3 100%); color:#010D20; transition:transform .22s,box-shadow .22s,filter .22s; }
+    .btn-cta:hover { filter:brightness(1.06); box-shadow:0 14px 36px rgba(0,178,207,0.3); }
+    .btn-whatsapp { background:#25D366; transition:background .22s,box-shadow .22s; }
+    .btn-whatsapp:hover { background:#1fbc59; box-shadow:0 10px 28px rgba(37,211,102,0.3); }
+    #navbar { background:rgba(1,13,32,0.78); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,0.06); }
+    .prose-oka { --tw-prose-body:rgba(248,248,255,0.72); --tw-prose-headings:#F8F8FF; --tw-prose-links:#00B2CF; --tw-prose-bold:#F8F8FF; --tw-prose-bullets:rgba(0,178,207,0.6); --tw-prose-counters:#00B2CF; --tw-prose-quotes:rgba(248,248,255,0.85); --tw-prose-quote-borders:#0077E6; --tw-prose-hr:rgba(255,255,255,0.08); --tw-prose-th-borders:rgba(255,255,255,0.15); --tw-prose-td-borders:rgba(255,255,255,0.08); }
+    .prose-oka a { text-decoration-color:rgba(0,178,207,0.4); }
+    .prose-oka a:hover { color:#00D4A3; }
+  </style>
+
+  <!-- ════════ JSON-LD ════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://oka.dev.br/blog/zapier-make-ou-automacao-sob-medida/#article",
+        "mainEntityOfPage": "https://oka.dev.br/blog/zapier-make-ou-automacao-sob-medida/",
+        "headline": "Zapier, Make ou automação sob medida: qual faz sentido para o seu negócio?",
+        "description": "Comparativo honesto entre ferramentas de automação prontas (Zapier, Make, n8n) e automação sob medida: quando cada uma basta, quanto custam e quando migrar.",
+        "image": "https://oka.dev.br/brand/og-image.png",
+        "datePublished": "2026-07-03",
+        "dateModified": "2026-07-03",
+        "inLanguage": "pt-BR",
+        "author": { "@type": "Organization", "name": "OKA", "url": "https://oka.dev.br/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "OKA",
+          "logo": { "@type": "ImageObject", "url": "https://oka.dev.br/brand/oka-logo-full-light.png" }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://oka.dev.br/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://oka.dev.br/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Zapier, Make ou sob medida" }
+        ]
+      },
+      {
+              "@type": "FAQPage",
+              "mainEntity": [
+                      {
+                              "@type": "Question",
+                              "name": "Zapier e Make funcionam com sistemas brasileiros?",
+                              "acceptedAnswer": {
+                                      "@type": "Answer",
+                                      "text": "Parcialmente. Ferramentas globais têm integrações excelentes com apps internacionais, mas cobertura irregular de sistemas brasileiros (ERPs locais, bancos, prefeituras, WhatsApp Business). É comum precisar de uma ponte sob medida justamente nesse trecho."
+                              }
+                      },
+                      {
+                              "@type": "Question",
+                              "name": "Automação sob medida não fica cara demais para começar?",
+                              "acceptedAnswer": {
+                                      "@type": "Answer",
+                                      "text": "Depende do escopo. Automações sob medida enxutas competem de igual para igual com o custo anual de planos pagos dessas plataformas, com a vantagem de fazer exatamente o que você precisa. O erro é comparar o sob medida completo com o plano gratuito da ferramenta."
+                              }
+                      },
+                      {
+                              "@type": "Question",
+                              "name": "Posso começar com ferramenta pronta e migrar depois?",
+                              "acceptedAnswer": {
+                                      "@type": "Answer",
+                                      "text": "Sim, e costuma ser um bom caminho: a ferramenta pronta valida o processo, e a migração acontece quando volume, custo ou complexidade justificam. O desenho do fluxo é reaproveitado; o aprendizado, todo."
+                              }
+                      }
+              ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="antialiased">
+
+
+<!-- Shared logo gradient -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+  <linearGradient id="okaRing" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#0077E6"/><stop offset="55%" stop-color="#00B2CF"/><stop offset="100%" stop-color="#00D4A3"/>
+  </linearGradient>
+</defs></svg>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between relative">
+    <a href="/" class="flex items-center gap-2.5 cursor-pointer" aria-label="OKA — início">
+      <svg width="36" height="36" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="3"/>
+        <path d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
+      </svg>
+      <span class="font-heading font-bold text-lg text-polar tracking-widest">OKA</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 font-body">
+      <a href="/" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Início</a>
+      <a href="/#servicos" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Serviços</a>
+      <a href="/blog/" class="text-white text-sm font-medium">Blog</a>
+      <a href="/#treinamentos" class="text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Treinamentos</a>
+    </div>
+    <a href="/#contato" class="inline-flex group items-center justify-center gap-2 rounded-full bg-white text-black font-medium text-sm px-5 py-3 transition-all hover:bg-white/90 active:scale-[0.98]">
+      Fale conosco
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-[1px]" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ════════ ARTIGO ════════ -->
+<main class="pt-36 pb-24 px-6">
+  <article class="max-w-3xl mx-auto">
+
+    <nav aria-label="breadcrumb" class="font-body text-xs text-polar/40 mb-8">
+      <a href="/" class="hover:text-polar/70 transition-colors">Início</a>
+      <span class="mx-2">/</span>
+      <a href="/blog/" class="hover:text-polar/70 transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-polar/60">Zapier, Make ou sob medida</span>
+    </nav>
+
+    <p class="text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4 font-jakarta">Automação</p>
+    <h1 class="font-heading font-bold text-polar leading-tight mb-6" style="font-size:clamp(1.9rem,4.5vw,3rem);">
+      Zapier, Make ou automação <span class="text-gradient">sob medida</span>: qual faz sentido?
+    </h1>
+    <p class="font-body text-polar/40 text-sm mb-12">Por OKA · 3 de julho de 2026 · 7 min de leitura</p>
+
+    <div class="prose prose-invert prose-oka max-w-none prose-headings:font-heading prose-p:font-body prose-li:font-body">
+
+      <p>Antes de tudo, uma posição honesta de quem vende automação sob medida: <strong>ferramentas como Zapier, Make e n8n são ótimas, e às vezes são tudo o que você precisa</strong>. Este guia existe para te ajudar a saber quando é o seu caso e quando não é.</p>
+
+      <h2>O que são essas ferramentas</h2>
+      <p>Zapier, Make (antigo Integromat) e n8n são plataformas de integração: elas conectam aplicativos entre si com a lógica "quando acontecer X ali, faça Y aqui". Novo lead na planilha → cria card no CRM → avisa no grupo. Sem programar, arrastando blocos.</p>
+
+      <h2>Quando a ferramenta pronta resolve</h2>
+      <ul>
+        <li><strong>Fluxos simples entre apps populares:</strong> formulários, planilhas, e-mail, CRMs conhecidos, agenda;</li>
+        <li><strong>Volume baixo:</strong> dezenas ou poucas centenas de execuções por mês;</li>
+        <li><strong>Processo em teste:</strong> você ainda está descobrindo se o fluxo faz sentido. Validar barato antes de investir é sensato;</li>
+        <li><strong>Alguém do time curte mexer:</strong> essas ferramentas exigem manutenção, e alguém precisa ser o dono delas.</li>
+      </ul>
+
+      <h2>Onde elas começam a travar</h2>
+      <ul>
+        <li><strong>Sistemas brasileiros.</strong> ERP local, emissão de nota fiscal, bancos, WhatsApp Business API: a cobertura é irregular e as gambiarras se acumulam;</li>
+        <li><strong>Custo que escala com o uso.</strong> Os planos cobram por execução. O fluxo que custava pouco no teste vira assinatura pesada quando o volume cresce;</li>
+        <li><strong>Lógica complexa.</strong> Condições encadeadas, exceções, retentativas, tratamento de erro: dá para fazer, mas o "arrastar blocos" vira um emaranhado que só uma pessoa entende (e ela um dia sai de férias);</li>
+        <li><strong>Dados sensíveis.</strong> Seus dados trafegam por servidores de terceiros fora do Brasil, o que importa para contratos com cláusulas de confidencialidade e para a LGPD;</li>
+        <li><strong>IA de verdade.</strong> Chamar um modelo para uma tarefa pontual, ok; construir um agente que conversa, decide e executa exige mais do que os blocos oferecem.</li>
+      </ul>
+
+      <h2>Quando o sob medida compensa</h2>
+      <p>Automação sob medida é código construído para o seu processo. Faz sentido quando o processo é central para o negócio (atendimento, financeiro, operação), quando envolve sistemas locais sem integração pronta, quando o volume cresceu, ou quando você quer <a href="/blog/o-que-sao-agentes-de-ia/">agentes de IA</a> conversando com clientes. Custa mais na entrada e menos na escala: não há cobrança por execução, e o fluxo faz exatamente o que você precisa, sem contorções.</p>
+
+      <h2>O critério prático</h2>
+      <ol>
+        <li>O processo é <strong>periférico</strong> (aviso interno, cópia de dados entre apps)? → ferramenta pronta;</li>
+        <li>O processo é <strong>central e crescente</strong> (atendimento, cobrança, operação)? → sob medida, ou pronta agora com migração planejada;</li>
+        <li>Envolve <strong>WhatsApp, sistemas brasileiros ou IA conversacional</strong>? → quase sempre sob medida, ao menos no trecho da ponte.</li>
+      </ol>
+      <p>E o híbrido é legítimo: muita empresa roda os dois, ferramenta pronta para o periférico, sob medida para o coração. Se for conversar com fornecedores, leve as <a href="/blog/o-que-perguntar-antes-de-contratar-automacao/">8 perguntas deste guia</a>.</p>
+
+      <h2>Perguntas frequentes</h2>
+
+      <h3>Zapier e Make funcionam com sistemas brasileiros?</h3>
+      <p>Parcialmente. A cobertura de ERPs locais, bancos e WhatsApp Business é irregular, e é comum precisar de uma ponte sob medida nesse trecho.</p>
+
+      <h3>Sob medida não fica caro demais para começar?</h3>
+      <p>Escopos enxutos competem com o custo anual dos planos pagos das plataformas. O erro é comparar o sob medida completo com o plano gratuito.</p>
+
+      <h3>Posso começar com ferramenta pronta e migrar depois?</h3>
+      <p>Sim, é um caminho saudável: valide o processo barato e migre quando volume ou complexidade justificarem.</p>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="glass rounded-3xl p-8 md:p-10 text-center mt-14">
+      <h2 class="font-heading font-bold text-polar text-2xl mb-3">Em dúvida sobre qual caminho <span class="text-gradient">seguir</span>?</h2>
+      <p class="font-body text-polar/50 mb-7">Descreva o processo que você quer automatizar e dizemos, honestamente, se uma ferramenta pronta resolve ou não.</p>
+      <a href="https://wa.me/559284648668?text=Ol%C3%A1%2C%20OKA%21%20Li%20o%20comparativo%20de%20Zapier/Make%20vs%20sob%20medida%20e%20quero%20uma%20opini%C3%A3o%20sobre%20o%20meu%20caso." target="_blank" rel="noopener noreferrer" class="btn-whatsapp inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-base">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+        Conversar no WhatsApp
+      </a>
+    </div>
+
+    <!-- Leia também -->
+    <div class="mt-16">
+      <h2 class="font-heading font-semibold text-polar text-xl mb-6">Leia também</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <a href="/blog/automacao-de-processos-para-pequenas-empresas/" class="glass rounded-2xl p-6 block">
+          <p class="text-blue-glacial text-[11px] font-semibold tracking-[0.18em] uppercase mb-2 font-jakarta">Automação</p>
+          <h3 class="font-heading font-semibold text-polar text-lg leading-snug">Automação de processos para pequenas empresas: guia prático</h3>
+        </a>
+        <a href="/blog/o-que-perguntar-antes-de-contratar-automacao/" class="glass rounded-2xl p-6 block">
+          <p class="text-blue-glacial text-[11px] font-semibold tracking-[0.18em] uppercase mb-2 font-jakarta">Automação</p>
+          <h3 class="font-heading font-semibold text-polar text-lg leading-snug">O que perguntar antes de contratar uma empresa de automação</h3>
+        </a>
+      </div>
+    </div>
+
+  </article>
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="border-t py-10 px-6" style="border-color:rgba(255,255,255,0.06);">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-2.5 cursor-pointer" aria-label="OKA — início">
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="3"/>
+        <path d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
+      </svg>
+      <span class="font-heading font-bold text-polar tracking-widest">OKA</span>
+    </a>
+    <p class="font-body text-xs text-polar/30 text-center">© 2026 OKA — Casa das Soluções Inteligentes. Todos os direitos reservados.</p>
+    <div class="flex items-center gap-5">
+      <a href="/blog/" class="font-body text-xs text-polar/40 hover:text-polar/80 transition-colors">Blog</a>
+      <a href="https://instagram.com/Oka.projects" target="_blank" rel="noopener noreferrer" class="text-polar/40 hover:text-polar/80 transition-colors duration-200 cursor-pointer" aria-label="Instagram @Oka.projects">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
