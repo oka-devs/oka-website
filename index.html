@@ -292,8 +292,9 @@
     </a>
 
     <!-- Center: links -->
-    <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 font-inter">
+    <div class="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 font-inter whitespace-nowrap">
       <a href="#servicos"   class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Serviços</a>
+      <a href="#portfolio"  class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Portfólio</a>
       <a href="#agente-ia"  class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">O que é IA</a>
       <a href="#treinamentos" class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Treinamentos</a>
       <a href="#porque-oka" class="nav-link text-white/70 text-sm font-medium hover:text-white transition-colors duration-200">Por que OKA</a>
@@ -302,13 +303,13 @@
     </div>
 
     <!-- Right: pill CTA (desktop) -->
-    <a href="#contato" class="hidden md:inline-flex group items-center justify-center gap-2 rounded-full bg-white text-black font-medium text-sm px-5 py-3 transition-all hover:bg-white/90 active:scale-[0.98]">
+    <a href="#contato" class="hidden lg:inline-flex group items-center justify-center gap-2 rounded-full bg-white text-black font-medium text-sm px-5 py-3 transition-all hover:bg-white/90 active:scale-[0.98]">
       Fale conosco
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-[1px]" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
     </a>
 
     <!-- Mobile: circular menu button -->
-    <button id="hamburger" class="md:hidden w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-polar/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer" aria-label="Abrir menu" aria-expanded="false">
+    <button id="hamburger" class="lg:hidden w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-polar/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer" aria-label="Abrir menu" aria-expanded="false">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
     </button>
   </div>
@@ -320,6 +321,7 @@
     <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
   <a href="#servicos"   class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>SERVIÇOS</a>
+  <a href="#portfolio"  class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>PORTFÓLIO</a>
   <a href="#agente-ia"  class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>O QUE É IA</a>
   <a href="#treinamentos" class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>TREINAMENTOS</a>
   <a href="#porque-oka" class="font-inter text-2xl text-polar/80 hover:text-emerald transition-colors" data-close-menu>POR QUE OKA</a>
@@ -453,25 +455,46 @@
         </div>
       </div>
     </div>
-
-    <!-- App showcase: LocaFácil -->
-    <div class="reveal mt-12 glass rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6" style="border-color:rgba(253,234,218,0.18);">
-      <a href="https://apps.apple.com/br/app/locaf%C3%A1cil-alugue-tudo/id6776306781" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 group">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/43/49/cc434925-3bcd-bcb8-2002-5e4f7101bea2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="Ícone do app LocaFácil – Alugue Tudo, desenvolvido pela OKA" width="80" height="80" loading="lazy" decoding="async" class="w-20 h-20 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-200" />
-      </a>
-      <div class="flex-1 text-center sm:text-left">
-        <p class="font-inter text-xs text-white/40 tracking-[0.18em] uppercase mb-1">Desenvolvido pela OKA</p>
-        <h3 class="font-heading font-semibold text-lg text-polar mb-1">LocaFácil – Alugue Tudo</h3>
-        <p class="font-body text-polar/50 text-sm leading-relaxed">Gerencie imóveis, veículos e equipamentos alugados em um só app — contratos, cobranças e comprovantes sem papel.</p>
-      </div>
-      <a href="https://apps.apple.com/br/app/locaf%C3%A1cil-alugue-tudo/id6776306781" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 text-polar/70 hover:text-polar hover:border-white/30 transition-all text-sm font-inter">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        Ver na App Store
-      </a>
-    </div>
   </div>
 </section>
 
+
+<!-- ════════ PORTFÓLIO ════════ -->
+<section id="portfolio" class="py-28 px-6 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="reveal text-blue-glacial text-xs font-semibold tracking-[0.22em] uppercase mb-4">Portfólio</p>
+      <h2 class="reveal-head font-heading font-bold text-polar mb-4" style="font-size:clamp(2rem,5vw,3.25rem);">Produtos <span class="text-gradient">feitos na Oka</span></h2>
+      <p class="reveal font-body text-polar/50 max-w-xl mx-auto leading-relaxed">O que construímos e já está no ar, nas mãos de quem usa.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <article class="reveal glass rounded-2xl p-7 flex flex-col">
+        <div class="flex items-center gap-5 mb-5">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/43/49/cc434925-3bcd-bcb8-2002-5e4f7101bea2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="Ícone do app LocaFácil – Alugue Tudo, desenvolvido pela OKA" width="72" height="72" loading="lazy" decoding="async" class="w-[72px] h-[72px] rounded-[18px] shadow-lg flex-shrink-0" />
+          <div>
+            <p class="font-inter text-xs text-white/40 tracking-[0.18em] uppercase mb-1">App de gestão</p>
+            <h3 class="font-heading font-semibold text-xl text-polar">LocaFácil – Alugue Tudo</h3>
+          </div>
+        </div>
+        <p class="font-body text-polar/55 text-sm leading-relaxed mb-5">Gerencie imóveis, veículos e equipamentos alugados em um só app: contratos, cobranças e comprovantes sem papel.</p>
+        <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(224,140,67,0.3);color:#E08C43;">iPhone</span><span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(224,140,67,0.3);color:#E08C43;">iPad</span></div>
+        <div class="mt-auto flex flex-wrap gap-3"><a href="https://apps.apple.com/br/app/locaf%C3%A1cil-alugue-tudo/id6776306781" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 text-polar/70 hover:text-polar hover:border-white/30 transition-all text-sm font-inter"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Ver na App Store</a></div>
+      </article>
+      <article class="reveal glass rounded-2xl p-7 flex flex-col">
+        <div class="flex items-center gap-5 mb-5">
+          <img src="/brand/produtos/meety.png" alt="Ícone do Meety, desenvolvido pela OKA" width="72" height="72" loading="lazy" decoding="async" class="w-[72px] h-[72px] rounded-[18px] shadow-lg flex-shrink-0" />
+          <div>
+            <p class="font-inter text-xs text-white/40 tracking-[0.18em] uppercase mb-1">Reuniões com IA</p>
+            <h3 class="font-heading font-semibold text-xl text-polar">Meety</h3>
+          </div>
+        </div>
+        <p class="font-body text-polar/55 text-sm leading-relaxed mb-5">Grava a chamada e a sua voz, transcreve com o chip do próprio Mac, separa quem falou e escreve a ata. Nada sai do seu computador.</p>
+        <div class="flex flex-wrap gap-2 mb-6"><span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(224,140,67,0.3);color:#E08C43;">macOS</span><span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(224,140,67,0.3);color:#E08C43;">Grátis</span><span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(224,140,67,0.3);color:#E08C43;">Código aberto</span></div>
+        <div class="mt-auto flex flex-wrap gap-3"><a href="https://meety.oka.dev.br" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full btn-cta text-sm font-inter font-semibold"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>Conhecer o Meety</a><a href="https://github.com/oka-projects/meety/releases/latest" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 text-polar/70 hover:text-polar hover:border-white/30 transition-all text-sm font-inter"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>Baixar para Mac</a></div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- ════════ O QUE É UM AGENTE DE IA ════════ -->
 <section id="agente-ia" class="py-28 px-6 relative overflow-hidden">
