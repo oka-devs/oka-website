@@ -10,11 +10,11 @@
   <meta name="keywords" content="automação de processos, agentes de IA, inteligência artificial, análise de dados, business intelligence, RPA, chatbots, desenvolvimento de aplicativos, OKA" />
   <meta name="author" content="OKA" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#010D20" />
+  <meta name="theme-color" content="#1B1A1A" />
   <link rel="canonical" href="https://oka.dev.br/" />
 
   <!-- ════════ Favicons / app icons ════════ -->
-  <link rel="icon" type="image/svg+xml" href="/brand/oka-mark.svg" />
+  <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
   <link rel="icon" type="image/png" sizes="192x192" href="/brand/favicon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
@@ -62,8 +62,8 @@
       theme: {
         extend: {
           colors: {
-            ocean:'#010D20','blue-oka':'#0077E6','blue-glacial':'#00B2CF',
-            emerald:'#00D4A3', polar:'#F8F8FF','oka-red':'#C23432',
+            ocean:'#1B1A1A','blue-oka':'#C8702C','blue-glacial':'#E08C43',
+            emerald:'#FDCE00', polar:'#FDEADA','oka-red':'#FDEADA',
           },
           fontFamily: {
             heading: ['"Space Grotesk"','sans-serif'],
@@ -78,7 +78,7 @@
   <style>
     *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:auto; }
-    body { background:#010D20; color:#F8F8FF; font-family:'Inter',sans-serif; overflow-x:hidden; }
+    body { background:#1B1A1A; color:#FDEADA; font-family:'Inter',sans-serif; overflow-x:hidden; }
     h1,h2,h3,h4,h5 { font-family:'Space Grotesk',sans-serif; }
 
     .font-inter   { font-family:'Inter',sans-serif; }
@@ -86,7 +86,7 @@
     .font-serif-it{ font-family:'Instrument Serif',serif; font-style:italic; }
 
     .text-gradient {
-      background:linear-gradient(135deg,#0077E6 0%,#00B2CF 55%,#00D4A3 100%);
+      background:linear-gradient(135deg,#C8702C 0%,#E08C43 55%,#FDCE00 100%);
       -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
 
@@ -123,13 +123,13 @@
 
     /* ── Glass / nav / buttons ── */
     .glass { background:rgba(255,255,255,0.04); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,0.07); transition:background .28s,border-color .28s,transform .28s,box-shadow .28s; }
-    .glass:hover { background:rgba(255,255,255,0.07); border-color:rgba(0,119,230,0.28); transform:translateY(-5px); box-shadow:0 20px 60px rgba(0,119,230,0.08); }
-    .nav-glass { background:rgba(1,13,32,0.55); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border-bottom:1px solid rgba(255,255,255,0.05); transition:box-shadow .3s,background .3s; }
+    .glass:hover { background:rgba(255,255,255,0.07); border-color:rgba(200,112,44,0.28); transform:translateY(-5px); box-shadow:0 20px 60px rgba(200,112,44,0.08); }
+    .nav-glass { background:rgba(27,26,26,0.55); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); border-bottom:1px solid rgba(255,255,255,0.05); transition:box-shadow .3s,background .3s; }
 
-    .btn-cta { background:linear-gradient(135deg,#0077E6 0%,#00B2CF 55%,#00D4A3 100%); color:#010D20; transition:transform .22s,box-shadow .22s,filter .22s; }
-    .btn-cta:hover { filter:brightness(1.06); box-shadow:0 14px 36px rgba(0,178,207,0.3); }
+    .btn-cta { background:linear-gradient(135deg,#C8702C 0%,#E08C43 55%,#FDCE00 100%); color:#1B1A1A; transition:transform .22s,box-shadow .22s,filter .22s; }
+    .btn-cta:hover { filter:brightness(1.06); box-shadow:0 14px 36px rgba(224,140,67,0.3); }
     .btn-outline { border:1.5px solid rgba(255,255,255,0.18); transition:border-color .22s,background .22s,transform .22s; }
-    .btn-outline:hover { border-color:rgba(0,212,163,0.55); background:rgba(0,212,163,0.08); }
+    .btn-outline:hover { border-color:rgba(253,206,0,0.55); background:rgba(253,206,0,0.08); }
     .btn-whatsapp { background:#25D366; transition:background .22s,transform .22s,box-shadow .22s; }
     .btn-whatsapp:hover { background:#1fbc59; box-shadow:0 10px 28px rgba(37,211,102,0.3); }
     .btn-instagram { background:linear-gradient(45deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888); transition:opacity .22s,transform .22s,box-shadow .22s; }
@@ -137,14 +137,14 @@
 
     /* ── Form fields (contato) ── */
     .form-label { display:block; font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:rgba(255,255,255,0.6); margin-bottom:7px; letter-spacing:0.02em; }
-    .form-input { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:13px 16px; color:#F8F8FF; font-family:'Inter',sans-serif; font-size:14px; transition:border-color .2s,background .2s,box-shadow .2s; }
+    .form-input { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:13px 16px; color:#FDEADA; font-family:'Inter',sans-serif; font-size:14px; transition:border-color .2s,background .2s,box-shadow .2s; }
     .form-input::placeholder { color:rgba(255,255,255,0.32); }
-    .form-input:focus { outline:none; border-color:rgba(0,178,207,0.55); background:rgba(255,255,255,0.06); box-shadow:0 0 0 3px rgba(0,178,207,0.1); }
+    .form-input:focus { outline:none; border-color:rgba(224,140,67,0.55); background:rgba(255,255,255,0.06); box-shadow:0 0 0 3px rgba(224,140,67,0.1); }
     textarea.form-input { resize:vertical; min-height:104px; }
     select.form-input { appearance:none; -webkit-appearance:none; cursor:pointer; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff80' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:42px; }
-    select.form-input option { background:#0a1626; color:#F8F8FF; }
+    select.form-input option { background:#2A2929; color:#FDEADA; }
 
-    .step-badge { width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,rgba(0,119,230,0.18),rgba(0,178,207,0.18));border:1px solid rgba(0,119,230,0.38);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#00B2CF;margin:0 auto 1.5rem;flex-shrink:0; }
+    .step-badge { width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,rgba(200,112,44,0.18),rgba(224,140,67,0.18));border:1px solid rgba(200,112,44,0.38);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#E08C43;margin:0 auto 1.5rem;flex-shrink:0; }
     .icon-box { width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
 
     /* ── Chat demo (agente de IA) ── */
@@ -153,12 +153,12 @@
     .chat-stream::-webkit-scrollbar { display:none; }
     .bubble { max-width:84%; padding:10px 14px; border-radius:16px; font-size:13.5px; line-height:1.5; font-family:'Inter',sans-serif; }
     .bubble b { font-weight:600; }
-    .bubble-user { align-self:flex-end; background:linear-gradient(135deg,#0077E6,#00B2CF); color:#04121f; border-bottom-right-radius:5px; }
-    .bubble-user b { color:#04121f; }
-    .bubble-agent { align-self:flex-start; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); color:#E8F0F5; border-bottom-left-radius:5px; }
+    .bubble-user { align-self:flex-end; background:linear-gradient(135deg,#C8702C,#E08C43); color:#141313; border-bottom-right-radius:5px; }
+    .bubble-user b { color:#141313; }
+    .bubble-agent { align-self:flex-start; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); color:#F7E6D6; border-bottom-left-radius:5px; }
     .bubble-agent b { color:#fff; }
     .chat-status { align-self:center; display:inline-flex; align-items:center; gap:6px; font-size:11.5px; color:rgba(255,255,255,0.6); background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:5px 12px; border-radius:999px; text-align:center; }
-    .chat-status.done { color:#00D4A3; border-color:rgba(0,212,163,0.3); background:rgba(0,212,163,0.06); }
+    .chat-status.done { color:#FDCE00; border-color:rgba(253,206,0,0.3); background:rgba(253,206,0,0.06); }
     .typing-dots { align-self:flex-start; display:inline-flex; gap:4px; align-items:center; width:fit-content; padding:13px 16px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:16px; border-bottom-left-radius:5px; }
     .typing-dots span { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.55); animation:tdot 1.2s infinite ease-in-out; }
     .typing-dots span:nth-child(2) { animation-delay:.18s; }
@@ -168,34 +168,34 @@
     /* ── Automação: fluxo animado ── */
     .flow-list { position:relative; }
     .flow-list::before { content:''; position:absolute; left:21px; top:30px; bottom:30px; width:2px; background:rgba(255,255,255,0.08); }
-    .flow-progress { position:absolute; left:21px; top:30px; width:2px; height:0; z-index:0; background:linear-gradient(180deg,#0077E6,#00D4A3); box-shadow:0 0 9px rgba(0,178,207,0.55); transition:height .55s ease; }
+    .flow-progress { position:absolute; left:21px; top:30px; width:2px; height:0; z-index:0; background:linear-gradient(180deg,#C8702C,#FDCE00); box-shadow:0 0 9px rgba(224,140,67,0.55); transition:height .55s ease; }
     .flow-node { position:relative; z-index:1; display:flex; align-items:center; gap:14px; padding:12px 0; }
     .flow-icon { width:44px; height:44px; border-radius:12px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); transition:background .4s ease,border-color .4s ease,box-shadow .4s ease; }
-    .flow-node.active .flow-icon { background:rgba(0,178,207,0.16); border-color:rgba(0,178,207,0.6); box-shadow:0 0 0 4px rgba(0,178,207,0.08); }
-    .flow-title { font-family:'Inter',sans-serif; font-size:14px; font-weight:600; color:#aebcc6; transition:color .4s ease; }
+    .flow-node.active .flow-icon { background:rgba(224,140,67,0.16); border-color:rgba(224,140,67,0.6); box-shadow:0 0 0 4px rgba(224,140,67,0.08); }
+    .flow-title { font-family:'Inter',sans-serif; font-size:14px; font-weight:600; color:#BDB2A8; transition:color .4s ease; }
     .flow-node.active .flow-title { color:#fff; }
     .flow-sub { font-family:'Inter',sans-serif; font-size:11.5px; color:rgba(255,255,255,0.4); line-height:1.4; }
-    .flow-check { margin-left:auto; flex-shrink:0; color:#00D4A3; opacity:0; transform:scale(0.5); transition:opacity .4s ease,transform .4s ease; }
+    .flow-check { margin-left:auto; flex-shrink:0; color:#FDCE00; opacity:0; transform:scale(0.5); transition:opacity .4s ease,transform .4s ease; }
     .flow-node.active .flow-check { opacity:1; transform:scale(1); }
 
     /* ── BI: dashboard animado ── */
     .bi-bars { display:flex; align-items:flex-end; gap:10px; height:128px; }
     .bi-bar-wrap { flex:1; display:flex; flex-direction:column; align-items:center; gap:8px; height:100%; justify-content:flex-end; }
-    .bi-bar { width:100%; border-radius:6px 6px 0 0; height:0; background:linear-gradient(180deg,#00D4A3,#0077E6); transition:height 1s cubic-bezier(.2,.8,.2,1); }
-    .bi-bar.peak { background:linear-gradient(180deg,#00E6B0,#00B2CF); }
+    .bi-bar { width:100%; border-radius:6px 6px 0 0; height:0; background:linear-gradient(180deg,#FDCE00,#C8702C); transition:height 1s cubic-bezier(.2,.8,.2,1); }
+    .bi-bar.peak { background:linear-gradient(180deg,#FFD84D,#E08C43); }
     .bi-bar-label { font-family:'Inter',sans-serif; font-size:10px; color:rgba(255,255,255,0.35); }
 
     .reveal { opacity:0; transform:translateY(28px); }
     .reveal-head { clip-path:inset(0 0 100% 0); }
 
     /* ── Preloader ── */
-    #preloader { position:fixed; inset:0; z-index:10000; background:#010D20; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1.25rem; }
+    #preloader { position:fixed; inset:0; z-index:10000; background:#1B1A1A; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1.25rem; }
     #preloader .draw { stroke-dasharray:1; stroke-dashoffset:1; }
     #preloader .door { opacity:0; }
     #preloader .pl-word { opacity:0; letter-spacing:.6em; }
 
     /* ── Mobile menu (full-screen overlay) ── */
-    #mobile-menu { position:fixed; inset:0; z-index:80; background:rgba(1,13,32,0.97); backdrop-filter:blur(12px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem; opacity:0; pointer-events:none; transition:opacity .32s ease; }
+    #mobile-menu { position:fixed; inset:0; z-index:80; background:rgba(27,26,26,0.97); backdrop-filter:blur(12px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem; opacity:0; pointer-events:none; transition:opacity .32s ease; }
     #mobile-menu.open { opacity:1; pointer-events:auto; }
 
     @media (prefers-reduced-motion:reduce) {
@@ -204,6 +204,12 @@
       .glass,.btn-cta,.btn-outline,.btn-whatsapp,.btn-instagram { transition:none; }
       #bg-video,.bg-video-section { display:none; }
     }
+
+    /* ── Filtro de cor dos vídeos (marca v4): laranja dominante, luz amarela ── */
+    .oka-tint { position:absolute; inset:0; pointer-events:none; }
+    .oka-tint-cor { background:#E08C43; mix-blend-mode:color; }
+    .oka-tint-luz { background:radial-gradient(60% 70% at 70% 35%, rgba(253,206,0,0.55), transparent 70%); mix-blend-mode:soft-light; }
+    #bg-video,.bg-video-section { filter:grayscale(1) contrast(1.12); }
   </style>
 
   <!-- ════════ Structured data (JSON-LD) ════════ -->
@@ -219,9 +225,9 @@
         "url": "https://oka.dev.br/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://oka.dev.br/brand/oka-logo-full-light.png",
-          "width": 1410,
-          "height": 390
+          "url": "https://oka.dev.br/brand/favicon-512.png",
+          "width": 512,
+          "height": 512
         },
         "image": "https://oka.dev.br/brand/og-image.png",
         "description": "Automação de processos, agentes de IA e análise de dados sob medida para empresas que querem crescer.",
@@ -267,24 +273,12 @@
 
 <body class="antialiased">
 
-<!-- Shared logo gradient -->
-<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
-  <linearGradient id="okaRing" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-    <stop offset="0%" stop-color="#0077E6"/><stop offset="55%" stop-color="#00B2CF"/><stop offset="100%" stop-color="#00D4A3"/>
-  </linearGradient>
-</defs></svg>
 
 
 <!-- ════════ PRELOADER ════════ -->
 <div id="preloader">
-  <svg width="90" height="90" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-    <circle class="draw" cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="2.5"/>
-    <path class="draw" d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
-    <path class="draw" d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
-    <path class="draw" d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
-    <path class="door" d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
-  </svg>
-  <span class="pl-word font-heading font-bold text-lg text-polar/80">OKA</span>
+  <svg width="99" height="90" viewBox="116.5 98.25 183.78 166.64" aria-hidden="true"><polygon class="draw" points="265.82 164.17 145.82 164.43 135.72 145.83 279.52 145.52 265.82 164.17" fill="#E08C43" fill-opacity="0" stroke="#E08C43" stroke-width="3" stroke-linejoin="round"/><polygon class="draw" points="117.25 227.4 245.84 98.25 264.2 116.54 116.5 264.89 117.25 227.4" fill="#E08C43" fill-opacity="0" stroke="#E08C43" stroke-width="3" stroke-linejoin="round"/><polygon class="draw" points="300.28 263.47 154.62 118.43 170.86 102.13 298.3 229.01 300.28 263.47" fill="#E08C43" fill-opacity="0" stroke="#E08C43" stroke-width="3" stroke-linejoin="round"/><ellipse class="door" cx="207.92" cy="219.64" rx="22.43" ry="22.63" fill="#FDCE00"/></svg>
+  <svg class="pl-word" width="53" height="22" viewBox="98.08 166.72 220.56 92.15" role="img" aria-label="OKA"><path fill="#FDEADA" d="M301.79,181.06c-4.15-4.68-8.3-9.36-12.45-14.04h-53.98l-1.09,1.78c-2.25,3.68-4.79,7.12-7.59,10.25-6.19,6.94-13.51,12.29-21.48,15.73.33-.84.65-1.68.95-2.53,1.06-2.9,2.03-5.88,2.88-8.85,1.05-3.65,1.97-7.44,2.71-11.25l1-5.14h-16.99l-.69,3.18c-.77,3.53-1.71,7.03-2.8,10.41-2.27,7.07-5.24,13.85-8.83,20.19l-.16.29c-1.79,3.11-3.73,6.15-5.82,9.04-.14-2.89-.52-5.75-1.13-8.55,0-.03,0-.06-.02-.09l-.02-.11c-1.9-8.59-5.89-16.33-11.53-22.39-6.21-6.66-13.9-10.78-22.25-11.93-3.11-.43-6.3-.43-9.41-.01-1.13.16-2.28.38-3.42.65-3.51.85-6.91,2.25-10.09,4.17-3.18,1.91-6.12,4.3-8.73,7.12-8.12,8.71-12.77,21.04-12.77,33.82s4.37,24.54,12.33,33.35c.18.19.36.39.54.59,2.56,2.71,5.4,5.04,8.44,6.89.05.03.09.06.13.07,3.41,2.06,7.05,3.53,10.83,4.36,2.44.54,4.94.81,7.44.81s5.01-.27,7.45-.81c1.86-.41,3.7-.98,5.48-1.69l.79-.32.02-.02c2.3-.98,4.52-2.23,6.64-3.69,2.92-1.75,5.78-3.67,8.52-5.73,6.18-4.61,11.98-10.04,17.22-16.14,2.96-3.43,5.75-7.07,8.32-10.87,13.5,3.92,25.55,13.1,34.12,26.03.95,1.44,1.85,2.91,2.69,4.4,1.06,1.86,2.07,3.83,2.99,5.85l1.02,2.24h16.35c-1.09-7-5.31-16.12-12.15-26.17-3.19-4.69-6.41-8.79-8.88-11.76-.03-.03-.05-.06-.08-.08-3.73-3.73-7.73-7.01-11.95-9.83,6.98-3.71,13.43-8.58,19.25-14.56-.58,1.22-1.12,2.47-1.64,3.73-.88,2.19-1.66,4.45-2.33,6.77,1.3,1.41,7.63,8.43,14.03,17.81,2.2,3.22,4.15,6.35,5.87,9.38h51.76c-.24,2.9-.69,5.76-1.37,8.53-.85,3.51-2.04,6.85-3.52,9.93l-3.02,6.26h17.71l.94-2.57c1.35-3.71,2.42-7.6,3.17-11.57.96-4.99,1.45-10.16,1.45-15.36,0-18.52-6.27-36.05-16.88-47.6ZM160.9,214.45c-.44,8.46-4.37,16.25-10.52,20.88-1.86,1.12-3.77,2.15-5.69,3.1-.6.22-1.22.41-1.85.57-3.27.85-6.77.85-10.07,0-1.59-.41-3.15-1.02-4.65-1.83-2.48-1.34-4.73-3.16-6.67-5.41-4.36-5.07-6.77-11.8-6.77-18.95,0-10.63,5.43-20.27,13.83-24.57,1.96-.99,4.01-1.67,6.12-2,1.04-.17,2.1-.25,3.16-.25h.02c1.05,0,2.11.08,3.15.25,7.6,1.21,14.18,6.72,17.58,14.76.56,1.31,1.03,2.68,1.39,4.11.55,2.11.87,4.31.95,6.56.02.41.02.79.02,1.15,0,.53-.02,1.07-.05,1.64ZM245.55,214.04c4.25-15.85,15.22-27.17,28.04-27.17s23.78,11.32,28.03,27.17h-56.07Z"/></svg>
 </div>
 
 
@@ -293,14 +287,8 @@
   <div class="max-w-6xl mx-auto flex items-center justify-between relative">
     <!-- Left: logo -->
     <a href="#" class="flex items-center gap-2.5 cursor-pointer" aria-label="OKA — início">
-      <svg width="36" height="36" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="3"/>
-        <path d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
-        <path d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
-        <path d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
-        <path d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
-      </svg>
-      <span class="font-heading font-bold text-lg text-polar tracking-widest">OKA</span>
+      <svg width="35" height="32" viewBox="116.5 98.25 183.78 166.64" aria-hidden="true"><polygon points="265.82 164.17 145.82 164.43 135.72 145.83 279.52 145.52 265.82 164.17" fill="#E08C43"/><polygon points="117.25 227.4 245.84 98.25 264.2 116.54 116.5 264.89 117.25 227.4" fill="#E08C43"/><polygon points="300.28 263.47 154.62 118.43 170.86 102.13 298.3 229.01 300.28 263.47" fill="#E08C43"/><ellipse cx="207.92" cy="219.64" rx="22.43" ry="22.63" fill="#FDCE00"/></svg>
+      <svg width="43" height="18" viewBox="98.08 166.72 220.56 92.15" role="img" aria-label="OKA"><path fill="#FDEADA" d="M301.79,181.06c-4.15-4.68-8.3-9.36-12.45-14.04h-53.98l-1.09,1.78c-2.25,3.68-4.79,7.12-7.59,10.25-6.19,6.94-13.51,12.29-21.48,15.73.33-.84.65-1.68.95-2.53,1.06-2.9,2.03-5.88,2.88-8.85,1.05-3.65,1.97-7.44,2.71-11.25l1-5.14h-16.99l-.69,3.18c-.77,3.53-1.71,7.03-2.8,10.41-2.27,7.07-5.24,13.85-8.83,20.19l-.16.29c-1.79,3.11-3.73,6.15-5.82,9.04-.14-2.89-.52-5.75-1.13-8.55,0-.03,0-.06-.02-.09l-.02-.11c-1.9-8.59-5.89-16.33-11.53-22.39-6.21-6.66-13.9-10.78-22.25-11.93-3.11-.43-6.3-.43-9.41-.01-1.13.16-2.28.38-3.42.65-3.51.85-6.91,2.25-10.09,4.17-3.18,1.91-6.12,4.3-8.73,7.12-8.12,8.71-12.77,21.04-12.77,33.82s4.37,24.54,12.33,33.35c.18.19.36.39.54.59,2.56,2.71,5.4,5.04,8.44,6.89.05.03.09.06.13.07,3.41,2.06,7.05,3.53,10.83,4.36,2.44.54,4.94.81,7.44.81s5.01-.27,7.45-.81c1.86-.41,3.7-.98,5.48-1.69l.79-.32.02-.02c2.3-.98,4.52-2.23,6.64-3.69,2.92-1.75,5.78-3.67,8.52-5.73,6.18-4.61,11.98-10.04,17.22-16.14,2.96-3.43,5.75-7.07,8.32-10.87,13.5,3.92,25.55,13.1,34.12,26.03.95,1.44,1.85,2.91,2.69,4.4,1.06,1.86,2.07,3.83,2.99,5.85l1.02,2.24h16.35c-1.09-7-5.31-16.12-12.15-26.17-3.19-4.69-6.41-8.79-8.88-11.76-.03-.03-.05-.06-.08-.08-3.73-3.73-7.73-7.01-11.95-9.83,6.98-3.71,13.43-8.58,19.25-14.56-.58,1.22-1.12,2.47-1.64,3.73-.88,2.19-1.66,4.45-2.33,6.77,1.3,1.41,7.63,8.43,14.03,17.81,2.2,3.22,4.15,6.35,5.87,9.38h51.76c-.24,2.9-.69,5.76-1.37,8.53-.85,3.51-2.04,6.85-3.52,9.93l-3.02,6.26h17.71l.94-2.57c1.35-3.71,2.42-7.6,3.17-11.57.96-4.99,1.45-10.16,1.45-15.36,0-18.52-6.27-36.05-16.88-47.6ZM160.9,214.45c-.44,8.46-4.37,16.25-10.52,20.88-1.86,1.12-3.77,2.15-5.69,3.1-.6.22-1.22.41-1.85.57-3.27.85-6.77.85-10.07,0-1.59-.41-3.15-1.02-4.65-1.83-2.48-1.34-4.73-3.16-6.67-5.41-4.36-5.07-6.77-11.8-6.77-18.95,0-10.63,5.43-20.27,13.83-24.57,1.96-.99,4.01-1.67,6.12-2,1.04-.17,2.1-.25,3.16-.25h.02c1.05,0,2.11.08,3.15.25,7.6,1.21,14.18,6.72,17.58,14.76.56,1.31,1.03,2.68,1.39,4.11.55,2.11.87,4.31.95,6.56.02.41.02.79.02,1.15,0,.53-.02,1.07-.05,1.64ZM245.55,214.04c4.25-15.85,15.22-27.17,28.04-27.17s23.78,11.32,28.03,27.17h-56.07Z"/></svg>
     </a>
 
     <!-- Center: links -->
@@ -345,17 +333,18 @@
 <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
   <!-- Background video -->
   <video id="bg-video" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="oka-tint z-0 oka-tint-cor"></div><div class="oka-tint z-0 oka-tint-luz"></div>
 
   <!-- Overlays -->
-  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(90deg,#010D20 0%,rgba(1,13,32,0.55) 42%,transparent 100%);"></div>
-  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(0deg,#010D20 0%,rgba(1,13,32,0.2) 38%,transparent 70%);"></div>
+  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(90deg,#1B1A1A 0%,rgba(27,26,26,0.55) 42%,transparent 100%);"></div>
+  <div class="absolute inset-0 z-[1]" style="background:linear-gradient(0deg,#1B1A1A 0%,rgba(27,26,26,0.2) 38%,transparent 70%);"></div>
 
   <!-- Central glow -->
   <div class="absolute left-1/2 top-[12%] -translate-x-1/2 z-[2] pointer-events-none" data-parallax="0.2" aria-hidden="true">
     <svg width="900" height="420" viewBox="0 0 900 420" fill="none">
       <defs><filter id="glowBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="25"/></filter></defs>
-      <ellipse cx="450" cy="210" rx="380" ry="95" fill="#00B2CF" opacity="0.22" filter="url(#glowBlur)"/>
-      <ellipse cx="450" cy="210" rx="260" ry="60" fill="#00D4A3" opacity="0.16" filter="url(#glowBlur)"/>
+      <ellipse cx="450" cy="210" rx="380" ry="95" fill="#E08C43" opacity="0.22" filter="url(#glowBlur)"/>
+      <ellipse cx="450" cy="210" rx="260" ry="60" fill="#FDCE00" opacity="0.16" filter="url(#glowBlur)"/>
     </svg>
   </div>
 
@@ -411,62 +400,62 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="reveal glass rounded-2xl p-8">
-        <div class="icon-box mb-6" style="background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        <div class="icon-box mb-6" style="background:rgba(200,112,44,0.14);border:1px solid rgba(200,112,44,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Automação de Processos</h3>
         <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Tarefas repetitivas viram processos automáticos. Seus sistemas conversam entre si — sem ninguém digitando nada.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">RPA</span>
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">Integrações</span>
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">Workflows</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(200,112,44,0.3);color:#E08C43;">RPA</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(200,112,44,0.3);color:#E08C43;">Integrações</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(200,112,44,0.3);color:#E08C43;">Workflows</span>
         </div>
       </div>
 
-      <div class="reveal glass rounded-2xl p-8 relative overflow-hidden" style="border-color:rgba(0,212,163,0.18);">
-        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,212,163,0.12),transparent 70%);"></div>
-        <div class="icon-box mb-6 relative" style="background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+      <div class="reveal glass rounded-2xl p-8 relative overflow-hidden" style="border-color:rgba(253,206,0,0.18);">
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(253,206,0,0.12),transparent 70%);"></div>
+        <div class="icon-box mb-6 relative" style="background:rgba(253,206,0,0.14);border:1px solid rgba(253,206,0,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Agentes de IA</h3>
         <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Um atendente digital que entende e resolve sozinho: tira dúvidas, agenda e organiza clientes — 24 horas por dia.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">LLMs</span>
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">Chatbots</span>
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">Agentes</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(253,206,0,0.3);color:#FDCE00;">LLMs</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(253,206,0,0.3);color:#FDCE00;">Chatbots</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(253,206,0,0.3);color:#FDCE00;">Agentes</span>
         </div>
       </div>
 
       <div class="reveal glass rounded-2xl p-8">
-        <div class="icon-box mb-6" style="background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+        <div class="icon-box mb-6" style="background:rgba(224,140,67,0.14);border:1px solid rgba(224,140,67,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Análise de Dados &amp; BI</h3>
         <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Seus números em painéis simples e visuais — pra você decidir com clareza, em tempo real.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">Dashboards</span>
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">BI</span>
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">Analytics</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(224,140,67,0.3);color:#E08C43;">Dashboards</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(224,140,67,0.3);color:#E08C43;">BI</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(224,140,67,0.3);color:#E08C43;">Analytics</span>
         </div>
       </div>
 
-      <div class="reveal glass rounded-2xl p-8" style="border-color:rgba(194,52,50,0.18);">
-        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(194,52,50,0.08),transparent 70%);"></div>
-        <div class="icon-box mb-6" style="background:rgba(194,52,50,0.12);border:1px solid rgba(194,52,50,0.28);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C23432" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      <div class="reveal glass rounded-2xl p-8" style="border-color:rgba(253,234,218,0.18);">
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(253,234,218,0.08),transparent 70%);"></div>
+        <div class="icon-box mb-6" style="background:rgba(253,234,218,0.12);border:1px solid rgba(253,234,218,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FDEADA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Aplicativos</h3>
         <p class="font-body text-polar/48 text-sm leading-relaxed mb-6">Apps mobile e web bonitos e fáceis de usar — do conceito à publicação na loja.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(194,52,50,0.3);color:#C23432;">iOS</span>
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(194,52,50,0.3);color:#C23432;">Android</span>
-          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(194,52,50,0.3);color:#C23432;">Web App</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(253,234,218,0.3);color:#FDEADA;">iOS</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(253,234,218,0.3);color:#FDEADA;">Android</span>
+          <span class="text-xs px-3 py-1 rounded-full" style="border:1px solid rgba(253,234,218,0.3);color:#FDEADA;">Web App</span>
         </div>
       </div>
     </div>
 
     <!-- App showcase: LocaFácil -->
-    <div class="reveal mt-12 glass rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6" style="border-color:rgba(194,52,50,0.18);">
+    <div class="reveal mt-12 glass rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6" style="border-color:rgba(253,234,218,0.18);">
       <a href="https://apps.apple.com/br/app/locaf%C3%A1cil-alugue-tudo/id6776306781" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 group">
         <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cc/43/49/cc434925-3bcd-bcb8-2002-5e4f7101bea2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="Ícone do app LocaFácil – Alugue Tudo, desenvolvido pela OKA" width="80" height="80" loading="lazy" decoding="async" class="w-20 h-20 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-200" />
       </a>
@@ -486,7 +475,7 @@
 
 <!-- ════════ O QUE É UM AGENTE DE IA ════════ -->
 <section id="agente-ia" class="py-28 px-6 relative overflow-hidden">
-  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,212,163,0.08),transparent 70%);" aria-hidden="true"></div>
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(253,206,0,0.08),transparent 70%);" aria-hidden="true"></div>
 
   <div class="relative z-10 max-w-6xl mx-auto">
     <div class="text-center mb-14">
@@ -500,8 +489,8 @@
       <!-- Left: how it works in 3 steps -->
       <div class="space-y-7 order-2 md:order-1">
         <div class="reveal flex gap-4">
-          <div class="icon-box" style="background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <div class="icon-box" style="background:rgba(200,112,44,0.14);border:1px solid rgba(200,112,44,0.28);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
           <div>
             <h3 class="font-heading font-semibold text-lg text-polar mb-1">1. Entende</h3>
@@ -510,8 +499,8 @@
         </div>
 
         <div class="reveal flex gap-4">
-          <div class="icon-box" style="background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>
+          <div class="icon-box" style="background:rgba(224,140,67,0.14);border:1px solid rgba(224,140,67,0.28);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg>
           </div>
           <div>
             <h3 class="font-heading font-semibold text-lg text-polar mb-1">2. Decide e consulta</h3>
@@ -520,8 +509,8 @@
         </div>
 
         <div class="reveal flex gap-4">
-          <div class="icon-box" style="background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <div class="icon-box" style="background:rgba(253,206,0,0.14);border:1px solid rgba(253,206,0,0.28);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
           <div>
             <h3 class="font-heading font-semibold text-lg text-polar mb-1">3. Age</h3>
@@ -536,14 +525,14 @@
       <div class="reveal liquid-glass rounded-3xl p-5 chat-window order-1 md:order-2">
         <div class="flex items-center gap-3 pb-4 mb-1" style="border-bottom:1px solid rgba(255,255,255,0.06);">
           <div class="relative">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#0077E6,#00D4A3);">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#C8702C,#FDCE00);">
               <svg width="22" height="22" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                <path d="M30 72 L54 20" stroke="#04121f" stroke-width="6" stroke-linecap="round"/>
-                <path d="M70 72 L46 20" stroke="#04121f" stroke-width="6" stroke-linecap="round"/>
-                <path d="M27 72 L73 72" stroke="#04121f" stroke-width="6" stroke-linecap="round"/>
+                <path d="M30 72 L54 20" stroke="#141313" stroke-width="6" stroke-linecap="round"/>
+                <path d="M70 72 L46 20" stroke="#141313" stroke-width="6" stroke-linecap="round"/>
+                <path d="M27 72 L73 72" stroke="#141313" stroke-width="6" stroke-linecap="round"/>
               </svg>
             </div>
-            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2" style="background:#00D4A3;border-color:#0a1626;" aria-hidden="true"></span>
+            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2" style="background:#FDCE00;border-color:#2A2929;" aria-hidden="true"></span>
           </div>
           <div>
             <p class="font-heading font-semibold text-sm text-polar leading-tight">Agente OKA</p>
@@ -585,29 +574,29 @@
     <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center mb-20">
       <div class="reveal glass rounded-3xl p-6 order-1">
         <div class="flex items-center gap-2 mb-5 px-1">
-          <span class="w-1.5 h-1.5 rounded-full" style="background:#00B2CF;"></span>
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#E08C43;"></span>
           <span class="font-inter text-sm text-white/70">Automação rodando</span>
           <span class="ml-auto font-inter text-[10px] text-white/40 tracking-[0.2em] uppercase">ao vivo</span>
         </div>
         <div id="flow-list" class="flow-list">
           <span class="flow-progress"></span>
           <div class="flow-node">
-            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
             <div class="flow-body"><p class="flow-title">Nova intimação publicada</p><p class="flow-sub">tribunal, diário ou portal</p></div>
             <span class="flow-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
           </div>
           <div class="flow-node">
-            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
             <div class="flow-body"><p class="flow-title">Lê e classifica o andamento</p><p class="flow-sub">identifica tipo e urgência</p></div>
             <span class="flow-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
           </div>
           <div class="flow-node">
-            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M12 14v3l2 1"/></svg></div>
+            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M12 14v3l2 1"/></svg></div>
             <div class="flow-body"><p class="flow-title">Calcula o prazo e agenda</p><p class="flow-sub">lança na agenda do time</p></div>
             <span class="flow-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
           </div>
           <div class="flow-node">
-            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+            <div class="flow-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
             <div class="flow-body"><p class="flow-title">Avisa o advogado responsável</p><p class="flow-sub">alerta enviado automático</p></div>
             <span class="flow-check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
           </div>
@@ -616,8 +605,8 @@
 
       <div class="order-2">
         <div class="reveal flex items-center gap-2.5 mb-4">
-          <span class="icon-box" style="width:38px;height:38px;background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+          <span class="icon-box" style="width:38px;height:38px;background:rgba(224,140,67,0.14);border:1px solid rgba(224,140,67,0.28);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
           </span>
           <span class="font-inter text-sm text-white/70">Automação de processos</span>
         </div>
@@ -631,8 +620,8 @@
     <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
       <div class="order-2 md:order-1">
         <div class="reveal flex items-center gap-2.5 mb-4">
-          <span class="icon-box" style="width:38px;height:38px;background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          <span class="icon-box" style="width:38px;height:38px;background:rgba(253,206,0,0.14);border:1px solid rgba(253,206,0,0.28);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
           </span>
           <span class="font-inter text-sm text-white/70">Análise de dados &amp; BI</span>
         </div>
@@ -643,7 +632,7 @@
 
       <div class="reveal glass rounded-3xl p-6 order-1 md:order-2" id="bi-demo">
         <div class="flex items-center gap-2 mb-5 px-1">
-          <span class="w-1.5 h-1.5 rounded-full" style="background:#00D4A3;"></span>
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#FDCE00;"></span>
           <span class="font-inter text-sm text-white/70">Painel do escritório</span>
           <span class="ml-auto font-inter text-[10px] text-emerald tracking-[0.2em] uppercase">tempo real</span>
         </div>
@@ -659,7 +648,7 @@
           </div>
           <div class="rounded-xl p-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
             <p class="font-inter text-[10px] text-white/40 uppercase tracking-wider mb-1">No prazo</p>
-            <p class="font-heading font-bold text-lg leading-none" style="color:#00D4A3;"><span class="counter" data-to="98" data-suffix="%">0%</span></p>
+            <p class="font-heading font-bold text-lg leading-none" style="color:#FDCE00;"><span class="counter" data-to="98" data-suffix="%">0%</span></p>
           </div>
         </div>
 
@@ -687,7 +676,7 @@
 
 <!-- ════════ TREINAMENTOS ════════ -->
 <section id="treinamentos" class="py-28 px-6 relative overflow-hidden">
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[640px] h-[320px] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,119,230,0.08),transparent 70%);" aria-hidden="true"></div>
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[640px] h-[320px] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(200,112,44,0.08),transparent 70%);" aria-hidden="true"></div>
 
   <div class="relative z-10 max-w-6xl mx-auto">
     <div class="text-center mb-16">
@@ -699,25 +688,25 @@
     <!-- Para quem -->
     <div class="grid md:grid-cols-3 gap-6 mb-20">
       <div class="reveal glass rounded-2xl p-8">
-        <div class="icon-box mb-6" style="background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M19 21V11a2 2 0 0 0-2-2h-2"/><line x1="9" y1="7" x2="9" y2="7.01"/><line x1="9" y1="11" x2="9" y2="11.01"/><line x1="9" y1="15" x2="9" y2="15.01"/></svg>
+        <div class="icon-box mb-6" style="background:rgba(200,112,44,0.14);border:1px solid rgba(200,112,44,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M19 21V11a2 2 0 0 0-2-2h-2"/><line x1="9" y1="7" x2="9" y2="7.01"/><line x1="9" y1="11" x2="9" y2="11.01"/><line x1="9" y1="15" x2="9" y2="15.01"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Escritórios</h3>
         <p class="font-body text-polar/48 text-sm leading-relaxed">Times jurídicos, contábeis e profissionais liberais que querem ganhar tempo nas rotinas — peças, pesquisas, revisões e organização do dia a dia.</p>
       </div>
 
       <div class="reveal glass rounded-2xl p-8">
-        <div class="icon-box mb-6" style="background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <div class="icon-box mb-6" style="background:rgba(224,140,67,0.14);border:1px solid rgba(224,140,67,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Empresas</h3>
         <p class="font-body text-polar/48 text-sm leading-relaxed">Equipes de qualquer porte que querem adotar IA com método, segurança e resultado real — capacitando o time inteiro, não só uma pessoa.</p>
       </div>
 
-      <div class="reveal glass rounded-2xl p-8" style="border-color:rgba(0,212,163,0.18);">
-        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,212,163,0.12),transparent 70%);"></div>
-        <div class="icon-box mb-6 relative" style="background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      <div class="reveal glass rounded-2xl p-8" style="border-color:rgba(253,206,0,0.18);">
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(253,206,0,0.12),transparent 70%);"></div>
+        <div class="icon-box mb-6 relative" style="background:rgba(253,206,0,0.14);border:1px solid rgba(253,206,0,0.28);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
         </div>
         <h3 class="font-heading font-semibold text-xl text-polar mb-3">Sob medida</h3>
         <p class="font-body text-polar/48 text-sm leading-relaxed">Você pede, a gente monta. Definimos a ementa, os exemplos e o ritmo a partir do que a sua equipe realmente precisa aprender.</p>
@@ -734,43 +723,43 @@
       <!-- Nível 01 -->
       <div class="reveal glass rounded-2xl p-7">
         <div class="flex items-center gap-2.5 mb-5">
-          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.3);color:#00B2CF;">Nível 01</span>
+          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(200,112,44,0.14);border:1px solid rgba(200,112,44,0.3);color:#E08C43;">Nível 01</span>
           <span class="font-inter text-sm text-white/70">Iniciante</span>
         </div>
         <ul class="space-y-3.5">
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>O que é IA e como ela ajuda no dia a dia</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Primeiros passos com o Claude</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Escrever bons pedidos (prompts) do zero</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Resumir, revisar e redigir com apoio da IA</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>O que é IA e como ela ajuda no dia a dia</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Primeiros passos com o Claude</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Escrever bons pedidos (prompts) do zero</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Resumir, revisar e redigir com apoio da IA</li>
         </ul>
       </div>
 
       <!-- Nível 02 -->
-      <div class="reveal glass rounded-2xl p-7" style="border-color:rgba(0,178,207,0.18);">
+      <div class="reveal glass rounded-2xl p-7" style="border-color:rgba(224,140,67,0.18);">
         <div class="flex items-center gap-2.5 mb-5">
-          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.3);color:#00B2CF;">Nível 02</span>
+          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(224,140,67,0.14);border:1px solid rgba(224,140,67,0.3);color:#E08C43;">Nível 02</span>
           <span class="font-inter text-sm text-white/70">Intermediário</span>
         </div>
         <ul class="space-y-3.5">
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Prompts avançados e organização de conhecimento</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Modelos e fluxos para tarefas recorrentes</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Análise de documentos e dados com IA</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Boas práticas, limites e segurança</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Prompts avançados e organização de conhecimento</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Modelos e fluxos para tarefas recorrentes</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Análise de documentos e dados com IA</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Boas práticas, limites e segurança</li>
         </ul>
       </div>
 
       <!-- Nível 03 -->
-      <div class="reveal glass rounded-2xl p-7 relative overflow-hidden" style="border-color:rgba(0,212,163,0.2);">
-        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(0,212,163,0.1),transparent 70%);"></div>
+      <div class="reveal glass rounded-2xl p-7 relative overflow-hidden" style="border-color:rgba(253,206,0,0.2);">
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(253,206,0,0.1),transparent 70%);"></div>
         <div class="flex items-center gap-2.5 mb-5 relative">
-          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.3);color:#00D4A3;">Nível 03</span>
+          <span class="font-heading font-bold text-sm px-2.5 py-1 rounded-full" style="background:rgba(253,206,0,0.14);border:1px solid rgba(253,206,0,0.3);color:#FDCE00;">Nível 03</span>
           <span class="font-inter text-sm text-white/70">Avançado</span>
         </div>
         <ul class="space-y-3.5 relative">
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Claude Code na prática</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Criação de projetos do zero</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Automações e integrações com seus sistemas</li>
-          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Construir agentes e ferramentas sob medida</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Claude Code na prática</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Criação de projetos do zero</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Automações e integrações com seus sistemas</li>
+          <li class="flex gap-2.5 font-body text-polar/55 text-sm leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Construir agentes e ferramentas sob medida</li>
         </ul>
       </div>
     </div>
@@ -779,29 +768,29 @@
     <div class="reveal glass rounded-3xl p-8 md:p-10 mb-14">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
-          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(200,112,44,0.14);border:1px solid rgba(200,112,44,0.28);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
           </div>
           <h4 class="font-heading font-semibold text-base text-polar mb-1.5">Ao vivo ou gravado</h4>
           <p class="font-body text-polar/45 text-sm leading-relaxed">Online ou presencial, no formato que encaixa na agenda do time.</p>
         </div>
         <div>
-          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(0,178,207,0.14);border:1px solid rgba(0,178,207,0.28);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B2CF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(224,140,67,0.14);border:1px solid rgba(224,140,67,0.28);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E08C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
           <h4 class="font-heading font-semibold text-base text-polar mb-1.5">Material sob medida</h4>
           <p class="font-body text-polar/45 text-sm leading-relaxed">Apostila e exemplos montados com casos do seu contexto.</p>
         </div>
         <div>
-          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(0,212,163,0.14);border:1px solid rgba(0,212,163,0.28);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D4A3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(253,206,0,0.14);border:1px solid rgba(253,206,0,0.28);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FDCE00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           </div>
           <h4 class="font-heading font-semibold text-base text-polar mb-1.5">Prática desde o início</h4>
           <p class="font-body text-polar/45 text-sm leading-relaxed">Mão na massa com exercícios reais, não só teoria.</p>
         </div>
         <div>
-          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(0,119,230,0.14);border:1px solid rgba(0,119,230,0.28);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0077E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="icon-box mb-4" style="width:44px;height:44px;background:rgba(200,112,44,0.14);border:1px solid rgba(200,112,44,0.28);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8702C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h4 class="font-heading font-semibold text-base text-polar mb-1.5">Acompanhamento</h4>
           <p class="font-body text-polar/45 text-sm leading-relaxed">Suporte depois do treinamento para fixar de verdade.</p>
@@ -823,7 +812,8 @@
 <section id="porque-oka" class="relative py-28 px-6 overflow-hidden">
   <!-- Cinematic background video -->
   <video class="bg-video-section absolute inset-0 w-full h-full object-cover pointer-events-none" autoplay loop muted playsinline aria-hidden="true" style="opacity:0.35" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4"></video>
-  <div class="absolute inset-0" style="background:linear-gradient(180deg,#010D20 0%,rgba(1,13,32,0.5) 45%,rgba(1,13,32,0.7) 70%,#010D20 100%);"></div>
+  <div class="oka-tint oka-tint-cor"></div><div class="oka-tint oka-tint-luz"></div>
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,#1B1A1A 0%,rgba(27,26,26,0.5) 45%,rgba(27,26,26,0.7) 70%,#1B1A1A 100%);"></div>
 
   <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-start">
 
@@ -837,16 +827,10 @@
       <h2 class="reveal-head font-heading font-bold text-polar leading-[1.02] mb-6" style="font-size:clamp(1.9rem,4.5vw,3rem);">Tradição e inovação<br />no mesmo espaço</h2>
       <p class="reveal font-body text-polar/60 text-base leading-relaxed mb-10" style="max-width:28rem;">OKA é a nossa "oca" — a casa onde problemas encontram soluções tecnológicas, com a leveza de quem entende o seu negócio.</p>
       <div class="reveal flex items-center gap-5">
-        <svg id="big-logo" width="92" height="92" viewBox="0 0 100 100" fill="none" aria-label="Logo OKA">
-          <circle class="bl-draw" cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="2.5"/>
-          <path class="bl-draw" d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
-          <path class="bl-draw" d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
-          <path class="bl-draw" d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.2" stroke-linecap="round"/>
-          <path class="bl-door" d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
-        </svg>
+        <svg id="big-logo" width="101" height="92" viewBox="116.5 98.25 183.78 166.64" aria-label="Logo OKA"><polygon class="bl-draw" points="265.82 164.17 145.82 164.43 135.72 145.83 279.52 145.52 265.82 164.17" fill="#E08C43" fill-opacity="0" stroke="#E08C43" stroke-width="3" stroke-linejoin="round"/><polygon class="bl-draw" points="117.25 227.4 245.84 98.25 264.2 116.54 116.5 264.89 117.25 227.4" fill="#E08C43" fill-opacity="0" stroke="#E08C43" stroke-width="3" stroke-linejoin="round"/><polygon class="bl-draw" points="300.28 263.47 154.62 118.43 170.86 102.13 298.3 229.01 300.28 263.47" fill="#E08C43" fill-opacity="0" stroke="#E08C43" stroke-width="3" stroke-linejoin="round"/><ellipse class="bl-door" cx="207.92" cy="219.64" rx="22.43" ry="22.63" fill="#FDCE00"/></svg>
         <div>
-          <p class="font-heading font-bold text-3xl text-polar tracking-[0.22em]">OKA</p>
-          <p class="font-body text-xs text-polar/35 tracking-[0.12em] uppercase mt-1.5">Casa das Soluções Inteligentes</p>
+          <svg width="81" height="34" viewBox="98.08 166.72 220.56 92.15" role="img" aria-label="OKA"><path fill="#FDEADA" d="M301.79,181.06c-4.15-4.68-8.3-9.36-12.45-14.04h-53.98l-1.09,1.78c-2.25,3.68-4.79,7.12-7.59,10.25-6.19,6.94-13.51,12.29-21.48,15.73.33-.84.65-1.68.95-2.53,1.06-2.9,2.03-5.88,2.88-8.85,1.05-3.65,1.97-7.44,2.71-11.25l1-5.14h-16.99l-.69,3.18c-.77,3.53-1.71,7.03-2.8,10.41-2.27,7.07-5.24,13.85-8.83,20.19l-.16.29c-1.79,3.11-3.73,6.15-5.82,9.04-.14-2.89-.52-5.75-1.13-8.55,0-.03,0-.06-.02-.09l-.02-.11c-1.9-8.59-5.89-16.33-11.53-22.39-6.21-6.66-13.9-10.78-22.25-11.93-3.11-.43-6.3-.43-9.41-.01-1.13.16-2.28.38-3.42.65-3.51.85-6.91,2.25-10.09,4.17-3.18,1.91-6.12,4.3-8.73,7.12-8.12,8.71-12.77,21.04-12.77,33.82s4.37,24.54,12.33,33.35c.18.19.36.39.54.59,2.56,2.71,5.4,5.04,8.44,6.89.05.03.09.06.13.07,3.41,2.06,7.05,3.53,10.83,4.36,2.44.54,4.94.81,7.44.81s5.01-.27,7.45-.81c1.86-.41,3.7-.98,5.48-1.69l.79-.32.02-.02c2.3-.98,4.52-2.23,6.64-3.69,2.92-1.75,5.78-3.67,8.52-5.73,6.18-4.61,11.98-10.04,17.22-16.14,2.96-3.43,5.75-7.07,8.32-10.87,13.5,3.92,25.55,13.1,34.12,26.03.95,1.44,1.85,2.91,2.69,4.4,1.06,1.86,2.07,3.83,2.99,5.85l1.02,2.24h16.35c-1.09-7-5.31-16.12-12.15-26.17-3.19-4.69-6.41-8.79-8.88-11.76-.03-.03-.05-.06-.08-.08-3.73-3.73-7.73-7.01-11.95-9.83,6.98-3.71,13.43-8.58,19.25-14.56-.58,1.22-1.12,2.47-1.64,3.73-.88,2.19-1.66,4.45-2.33,6.77,1.3,1.41,7.63,8.43,14.03,17.81,2.2,3.22,4.15,6.35,5.87,9.38h51.76c-.24,2.9-.69,5.76-1.37,8.53-.85,3.51-2.04,6.85-3.52,9.93l-3.02,6.26h17.71l.94-2.57c1.35-3.71,2.42-7.6,3.17-11.57.96-4.99,1.45-10.16,1.45-15.36,0-18.52-6.27-36.05-16.88-47.6ZM160.9,214.45c-.44,8.46-4.37,16.25-10.52,20.88-1.86,1.12-3.77,2.15-5.69,3.1-.6.22-1.22.41-1.85.57-3.27.85-6.77.85-10.07,0-1.59-.41-3.15-1.02-4.65-1.83-2.48-1.34-4.73-3.16-6.67-5.41-4.36-5.07-6.77-11.8-6.77-18.95,0-10.63,5.43-20.27,13.83-24.57,1.96-.99,4.01-1.67,6.12-2,1.04-.17,2.1-.25,3.16-.25h.02c1.05,0,2.11.08,3.15.25,7.6,1.21,14.18,6.72,17.58,14.76.56,1.31,1.03,2.68,1.39,4.11.55,2.11.87,4.31.95,6.56.02.41.02.79.02,1.15,0,.53-.02,1.07-.05,1.64ZM245.55,214.04c4.25-15.85,15.22-27.17,28.04-27.17s23.78,11.32,28.03,27.17h-56.07Z"/></svg>
+          <p class="font-body text-xs text-polar/35 tracking-[0.12em] uppercase mt-1.5">Tecnologia com raiz no futuro</p>
         </div>
       </div>
     </div>
@@ -854,7 +838,7 @@
     <!-- Right column: liquid-glass card -->
     <div class="reveal liquid-glass rounded-2xl p-5">
       <div class="flex items-center gap-2 mb-4 px-1">
-        <span class="w-1.5 h-1.5 rounded-full" style="background:#00D4A3;"></span>
+        <span class="w-1.5 h-1.5 rounded-full" style="background:#FDCE00;"></span>
         <span class="font-inter text-sm text-white/70">Por que escolher a OKA</span>
         <span class="ml-auto font-inter text-xs text-white/40">4 motivos</span>
       </div>
@@ -863,7 +847,7 @@
         <!-- 1 -->
         <div class="liquid-glass rounded-lg p-3.5">
           <div class="flex items-center gap-2.5 mb-1.5">
-            <span class="w-2 h-2 rounded-full" style="background:#00D4A3;"></span>
+            <span class="w-2 h-2 rounded-full" style="background:#FDCE00;"></span>
             <span class="font-inter text-sm text-white font-medium">Soluções sob medida</span>
             <span class="ml-auto font-inter text-xs text-white/40">100%</span>
           </div>
@@ -872,7 +856,7 @@
         <!-- 2 -->
         <div class="liquid-glass rounded-lg p-3.5">
           <div class="flex items-center gap-2.5 mb-1.5">
-            <span class="w-2 h-2 rounded-full" style="background:#00B2CF;"></span>
+            <span class="w-2 h-2 rounded-full" style="background:#E08C43;"></span>
             <span class="font-inter text-sm text-white font-medium">Entrega ágil</span>
             <span class="ml-auto font-inter text-xs text-white/40">semanas</span>
           </div>
@@ -881,7 +865,7 @@
         <!-- 3 -->
         <div class="liquid-glass rounded-lg p-3.5">
           <div class="flex items-center gap-2.5 mb-1.5">
-            <span class="w-2 h-2 rounded-full" style="background:#0077E6;"></span>
+            <span class="w-2 h-2 rounded-full" style="background:#C8702C;"></span>
             <span class="font-inter text-sm text-white font-medium">Parceria de longo prazo</span>
             <span class="ml-auto font-inter text-xs text-white/40">sempre</span>
           </div>
@@ -890,7 +874,7 @@
         <!-- 4 -->
         <div class="liquid-glass rounded-lg p-3.5">
           <div class="flex items-center gap-2.5 mb-1.5">
-            <span class="w-2 h-2 rounded-full" style="background:#5ED29C;"></span>
+            <span class="w-2 h-2 rounded-full" style="background:#FDCE00;"></span>
             <span class="font-inter text-sm text-white font-medium">Agentes sempre ativos</span>
             <span class="ml-auto font-inter text-xs text-white/40">24/7</span>
           </div>
@@ -911,7 +895,7 @@
       <h2 class="reveal-head font-heading font-bold text-polar" style="font-size:clamp(1.9rem,4.5vw,3rem);">Simples. Direto. <span class="text-gradient">Eficaz.</span></h2>
     </div>
     <div class="grid md:grid-cols-3 gap-10 relative">
-      <div class="hidden md:block absolute" style="top:26px;left:calc(16.666% + 20px);right:calc(16.666% + 20px);height:1px;background:linear-gradient(90deg,rgba(0,119,230,0.3),rgba(0,178,207,0.3));" aria-hidden="true"></div>
+      <div class="hidden md:block absolute" style="top:26px;left:calc(16.666% + 20px);right:calc(16.666% + 20px);height:1px;background:linear-gradient(90deg,rgba(200,112,44,0.3),rgba(224,140,67,0.3));" aria-hidden="true"></div>
       <div class="reveal text-center"><div class="step-badge">01</div><h3 class="font-heading font-semibold text-xl text-polar mb-3">Diagnóstico</h3><p class="font-body text-polar/42 text-sm leading-relaxed">Entendemos profundamente seus processos, gargalos e oportunidades. Sem jargão — conversa direta e honesta.</p></div>
       <div class="reveal text-center"><div class="step-badge">02</div><h3 class="font-heading font-semibold text-xl text-polar mb-3">Solução sob medida</h3><p class="font-body text-polar/42 text-sm leading-relaxed">Desenhamos e desenvolvemos a automação ideal para o seu contexto, com foco em impacto real e mensurável.</p></div>
       <div class="reveal text-center"><div class="step-badge">03</div><h3 class="font-heading font-semibold text-xl text-polar mb-3">Entrega e evolução</h3><p class="font-body text-polar/42 text-sm leading-relaxed">Implantamos, treinamos seu time e acompanhamos de perto. A OKA cresce junto com o seu negócio.</p></div>
@@ -1008,16 +992,10 @@
 <footer class="border-t py-10 px-6" style="border-color:rgba(255,255,255,0.06);">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
     <a href="#" class="flex items-center gap-2.5 cursor-pointer" aria-label="OKA — topo">
-      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#okaRing)" stroke-width="3"/>
-        <path d="M30 72 L54 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
-        <path d="M70 72 L46 20" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
-        <path d="M25 72 L75 72" stroke="#F8F8FF" stroke-width="3.4" stroke-linecap="round"/>
-        <path d="M50 54 L44 71 L56 71 Z" fill="#C23432"/>
-      </svg>
-      <span class="font-heading font-bold text-polar tracking-widest">OKA</span>
+      <svg width="31" height="28" viewBox="116.5 98.25 183.78 166.64" aria-hidden="true"><polygon points="265.82 164.17 145.82 164.43 135.72 145.83 279.52 145.52 265.82 164.17" fill="#E08C43"/><polygon points="117.25 227.4 245.84 98.25 264.2 116.54 116.5 264.89 117.25 227.4" fill="#E08C43"/><polygon points="300.28 263.47 154.62 118.43 170.86 102.13 298.3 229.01 300.28 263.47" fill="#E08C43"/><ellipse cx="207.92" cy="219.64" rx="22.43" ry="22.63" fill="#FDCE00"/></svg>
+      <svg width="38" height="16" viewBox="98.08 166.72 220.56 92.15" role="img" aria-label="OKA"><path fill="#FDEADA" d="M301.79,181.06c-4.15-4.68-8.3-9.36-12.45-14.04h-53.98l-1.09,1.78c-2.25,3.68-4.79,7.12-7.59,10.25-6.19,6.94-13.51,12.29-21.48,15.73.33-.84.65-1.68.95-2.53,1.06-2.9,2.03-5.88,2.88-8.85,1.05-3.65,1.97-7.44,2.71-11.25l1-5.14h-16.99l-.69,3.18c-.77,3.53-1.71,7.03-2.8,10.41-2.27,7.07-5.24,13.85-8.83,20.19l-.16.29c-1.79,3.11-3.73,6.15-5.82,9.04-.14-2.89-.52-5.75-1.13-8.55,0-.03,0-.06-.02-.09l-.02-.11c-1.9-8.59-5.89-16.33-11.53-22.39-6.21-6.66-13.9-10.78-22.25-11.93-3.11-.43-6.3-.43-9.41-.01-1.13.16-2.28.38-3.42.65-3.51.85-6.91,2.25-10.09,4.17-3.18,1.91-6.12,4.3-8.73,7.12-8.12,8.71-12.77,21.04-12.77,33.82s4.37,24.54,12.33,33.35c.18.19.36.39.54.59,2.56,2.71,5.4,5.04,8.44,6.89.05.03.09.06.13.07,3.41,2.06,7.05,3.53,10.83,4.36,2.44.54,4.94.81,7.44.81s5.01-.27,7.45-.81c1.86-.41,3.7-.98,5.48-1.69l.79-.32.02-.02c2.3-.98,4.52-2.23,6.64-3.69,2.92-1.75,5.78-3.67,8.52-5.73,6.18-4.61,11.98-10.04,17.22-16.14,2.96-3.43,5.75-7.07,8.32-10.87,13.5,3.92,25.55,13.1,34.12,26.03.95,1.44,1.85,2.91,2.69,4.4,1.06,1.86,2.07,3.83,2.99,5.85l1.02,2.24h16.35c-1.09-7-5.31-16.12-12.15-26.17-3.19-4.69-6.41-8.79-8.88-11.76-.03-.03-.05-.06-.08-.08-3.73-3.73-7.73-7.01-11.95-9.83,6.98-3.71,13.43-8.58,19.25-14.56-.58,1.22-1.12,2.47-1.64,3.73-.88,2.19-1.66,4.45-2.33,6.77,1.3,1.41,7.63,8.43,14.03,17.81,2.2,3.22,4.15,6.35,5.87,9.38h51.76c-.24,2.9-.69,5.76-1.37,8.53-.85,3.51-2.04,6.85-3.52,9.93l-3.02,6.26h17.71l.94-2.57c1.35-3.71,2.42-7.6,3.17-11.57.96-4.99,1.45-10.16,1.45-15.36,0-18.52-6.27-36.05-16.88-47.6ZM160.9,214.45c-.44,8.46-4.37,16.25-10.52,20.88-1.86,1.12-3.77,2.15-5.69,3.1-.6.22-1.22.41-1.85.57-3.27.85-6.77.85-10.07,0-1.59-.41-3.15-1.02-4.65-1.83-2.48-1.34-4.73-3.16-6.67-5.41-4.36-5.07-6.77-11.8-6.77-18.95,0-10.63,5.43-20.27,13.83-24.57,1.96-.99,4.01-1.67,6.12-2,1.04-.17,2.1-.25,3.16-.25h.02c1.05,0,2.11.08,3.15.25,7.6,1.21,14.18,6.72,17.58,14.76.56,1.31,1.03,2.68,1.39,4.11.55,2.11.87,4.31.95,6.56.02.41.02.79.02,1.15,0,.53-.02,1.07-.05,1.64ZM245.55,214.04c4.25-15.85,15.22-27.17,28.04-27.17s23.78,11.32,28.03,27.17h-56.07Z"/></svg>
     </a>
-    <p class="font-body text-xs text-polar/22 text-center">© 2026 OKA — Casa das Soluções Inteligentes. Todos os direitos reservados.</p>
+    <p class="font-body text-xs text-polar/22 text-center">© 2026 OKA · Tecnologia com raiz no futuro. Todos os direitos reservados.</p>
     <div class="flex items-center gap-5">
       <a href="/blog/" class="font-body text-xs text-polar/28 hover:text-polar/70 transition-colors">Blog</a>
       <a href="https://instagram.com/Oka.projects" target="_blank" rel="noopener noreferrer" class="text-polar/28 hover:text-polar/70 transition-colors duration-200 cursor-pointer" aria-label="Instagram @Oka.projects">
@@ -1098,6 +1076,7 @@
     strokes.forEach(p => { const len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = len; });
     gsap.timeline()
       .to(strokes, { strokeDashoffset: 0, duration: 0.9, stagger: 0.1, ease: 'power2.inOut' })
+      .to(strokes, { fillOpacity: 1, duration: 0.35 }, '-=0.25')
       .to(preloader.querySelector('.door'), { opacity: 1, duration: 0.3 }, '-=0.2')
       .to(preloader.querySelector('.pl-word'), { opacity: 1, letterSpacing: '0.25em', duration: 0.5 }, '-=0.1')
       .to(preloader, { opacity: 0, duration: 0.5, delay: 0.15, onComplete: () => { preloader.style.display = 'none'; ScrollTrigger.refresh(); } })
@@ -1131,10 +1110,10 @@
     if (!strokes.length) return;
     strokes.forEach(p => { const len = p.getTotalLength(); p.style.strokeDasharray = len; p.style.strokeDashoffset = reduce ? 0 : len; });
     const door = document.querySelector('#big-logo .bl-door');
-    if (reduce) return;
+    if (reduce) { strokes.forEach(p => { p.style.fillOpacity = 1; }); return; }
     if (door) door.style.opacity = 0;
     ScrollTrigger.create({ trigger: '#big-logo', start: 'top 85%', once: true, onEnter: () => {
-      gsap.timeline().to(strokes, { strokeDashoffset: 0, duration: 1, stagger: 0.12, ease: 'power2.inOut' }).to(door, { opacity: 1, duration: 0.4 }, '-=0.3');
+      gsap.timeline().to(strokes, { strokeDashoffset: 0, duration: 1, stagger: 0.12, ease: 'power2.inOut' }).to(strokes, { fillOpacity: 1, duration: 0.4 }, '-=0.3').to(door, { opacity: 1, duration: 0.4 }, '-=0.3');
     } });
   })();
 
